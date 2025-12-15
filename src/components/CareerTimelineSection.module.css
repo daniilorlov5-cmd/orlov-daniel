@@ -1,0 +1,622 @@
+.scrollContainer {
+  height: 140vh;
+  position: relative;
+}
+
+.stickyWrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.careerTimeline {
+  position: relative;
+  z-index: 1;
+  padding: 20px 0;
+  width: 100%;
+  background: linear-gradient(180deg, 
+    rgba(248, 250, 252, 0.95) 0%,
+    rgba(241, 245, 249, 0.98) 50%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
+  overflow: hidden;
+}
+
+.backgroundEffects {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.gradientOrb2 {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.gradientOrb3 {
+  position: absolute;
+  bottom: -15%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.progressIndicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.progressTrack {
+  width: 100px;
+  height: 3px;
+  background: rgba(139, 92, 246, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+  transition: width 0.15s ease-out;
+}
+
+.sectionDots {
+  display: flex;
+  gap: 10px;
+}
+
+.sectionDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sectionDot:hover {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.sectionDot.active {
+  background: var(--accent);
+}
+
+.timelineViewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.timelineTrack {
+  display: flex;
+  width: 200%;
+  position: relative;
+}
+
+.timelineSection {
+  width: 40%;
+  flex-shrink: 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.timelineSection:first-child {
+  margin-left: 10%;
+}
+
+.timelineSection:last-child {
+  margin-right: 10%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--primary) 0%, #4c3d8f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.cardsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 51px;
+  left: -50vw;
+  right: -50vw;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(16, 185, 129, 0.6) 0%,
+    rgba(139, 92, 246, 0.5) 20%,
+    rgba(139, 92, 246, 0.5) 80%,
+    rgba(249, 115, 22, 0.6) 100%
+  );
+  border-radius: 2px;
+  z-index: 1;
+  transform-origin: left;
+}
+
+.timelineItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  width: 240px;
+}
+
+.dateLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dateLabel.highlighted {
+  color: var(--accent);
+  border-color: rgba(139, 92, 246, 0.3);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+  font-weight: 700;
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--accent);
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.12);
+  margin: 8px 0;
+}
+
+.timelineCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  padding: 22px;
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timelineCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.15) 0%, rgba(20, 184, 166, 0.15) 100%);
+  border-radius: 20px 20px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timelineCard:hover::before {
+  opacity: 1;
+}
+
+.highlightedCard {
+  border-color: rgba(139, 92, 246, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(250, 248, 255, 0.99) 100%);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.12);
+}
+
+.highlightedCard::before {
+  background: var(--accent-gradient);
+  opacity: 1;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.highlightedTitle {
+  color: var(--accent);
+}
+
+.cardDescription {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.startMarker,
+.endMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 80px;
+  padding-top: 32px;
+}
+
+.startMarker span,
+.endMarker span {
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);
+  position: relative;
+  z-index: 10;
+}
+
+.endMarker span {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.4);
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.scrollArrows {
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: -2px;
+}
+
+.scrollText {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+@media (max-width: 1400px) {
+  .timelineSection {
+    padding: 0 40px;
+  }
+  
+  .cardsRow {
+    gap: 25px;
+  }
+  
+  .timelineItemWrapper {
+    width: 220px;
+  }
+  
+  .timelineCard {
+    min-height: 180px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .timelineSection {
+    padding: 0 30px;
+  }
+  
+  .cardsRow {
+    gap: 20px;
+  }
+  
+  .timelineItemWrapper {
+    width: 200px;
+  }
+  
+  .timelineCard {
+    padding: 16px;
+    min-height: 170px;
+  }
+  
+  .cardTitle {
+    font-size: 0.92rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .timelineSection {
+    padding: 0 20px;
+  }
+  
+  .cardsRow {
+    gap: 16px;
+  }
+  
+  .timelineItemWrapper {
+    width: 180px;
+  }
+  
+  .timelineCard {
+    min-height: 160px;
+    padding: 14px;
+  }
+  
+  .cardTitle {
+    font-size: 0.88rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.78rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  
+  .startMarker,
+  .endMarker {
+    width: 70px;
+  }
+  
+  .startMarker span,
+  .endMarker span {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrollContainer {
+    height: auto;
+  }
+
+  .stickyWrapper {
+    position: static;
+    height: auto;
+    overflow: visible;
+    align-items: stretch;
+  }
+
+  .careerTimeline {
+    padding: 24px 0 32px;
+    margin-bottom: 24px;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 24px;
+    height: auto;
+    min-height: 100px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .timelineViewport {
+    overflow: visible;
+  }
+
+  .timelineTrack {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .timelineSection {
+    padding: 0 16px;
+    width: 100%;
+    margin: 0 auto 32px;
+  }
+  
+  .timelineSection:first-child {
+    margin-left: 0;
+  }
+  
+  .cardsRow {
+    gap: 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .timelineItemWrapper {
+    width: 100%;
+  }
+  
+  .timelineCard {
+    padding: 12px;
+    min-height: 140px;
+    border-radius: 14px;
+    width: 100%;
+  }
+  
+  .cardTitle {
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+  }
+  
+  .cardDescription {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+  
+  .dateLabel {
+    display: none;
+  }
+  
+  .timelineDot {
+    display: none;
+  }
+  
+  .timelineLine {
+    display: none;
+  }
+  
+  .startMarker,
+  .endMarker {
+    display: none;
+  }
+  
+  .scrollHint {
+    right: 10px;
+    bottom: 70px;
+    padding: 6px 10px;
+    border-radius: 16px;
+  }
+  
+  .scrollArrows {
+    font-size: 0.8rem;
+  }
+  
+  .scrollText {
+    font-size: 0.7rem;
+  }
+  
+  .progressIndicator {
+    bottom: 16px;
+    padding: 6px 12px;
+    border-radius: 18px;
+  }
+  
+  .progressTrack {
+    width: 70px;
+    height: 2px;
+  }
+  
+  .sectionDots {
+    gap: 8px;
+  }
+  
+  .sectionDot {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Прячем оверлеи навигации, чтобы они не наезжали на соседние блоки */
+  .progressIndicator,
+  .scrollHint {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollContainer {
+    height: auto;
+  }
+  
+  .timelineItemWrapper {
+    width: 100%;
+  }
+  
+  .timelineCard {
+    padding: 10px;
+    min-height: 120px;
+  }
+  
+  .cardTitle {
+    font-size: 0.75rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.68rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.15rem;
+  }
+}

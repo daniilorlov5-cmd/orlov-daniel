@@ -1,0 +1,626 @@
+.hackathon {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.highlight {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.15rem;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.macbookWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+  margin-bottom: 60px;
+}
+
+.macbook {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.screen {
+  position: relative;
+  width: 700px;
+  height: 450px;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border-radius: 20px 20px 0 0;
+  padding: 15px 15px 0 15px;
+  box-shadow: 
+    0 -2px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.screenFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.screenContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.screenGlare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.cameraNotch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 20px;
+  background: #1a1a1a;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera {
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #3a3a4a 0%, #1a1a2a 60%, #0a0a0f 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.base {
+  position: relative;
+  width: 780px;
+  height: 18px;
+  background: linear-gradient(180deg, #c8c8c8 0%, #a8a8a8 50%, #d8d8d8 100%);
+  border-radius: 0 0 4px 4px;
+  margin: 0 auto;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.keyboard {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 4px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 0 0 2px 2px;
+}
+
+.keyboardInner {
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%
+  );
+}
+
+.trackpad {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 6px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border-radius: 1px;
+}
+
+.baseEdge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(180deg, #a0a0a0 0%, #c0c0c0 100%);
+  border-radius: 0 0 4px 4px;
+}
+
+.baseFront {
+  position: relative;
+  width: 780px;
+  height: 8px;
+  background: linear-gradient(180deg, #e0e0e0 0%, #c8c8c8 100%);
+  margin: 0 auto;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.indent {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(180deg, #b0b0b0 0%, #d0d0d0 100%);
+  border-radius: 0 0 50% 50%;
+}
+
+.shadow {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 40px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    transparent 70%
+  );
+  filter: blur(15px);
+}
+
+.regionBadge {
+  position: absolute;
+  bottom: 80px;
+  left: -40px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  padding: 14px 22px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 
+    0 15px 50px rgba(99, 102, 241, 0.4),
+    0 5px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.regionIcon {
+  font-size: 1.3rem;
+}
+
+.regionText {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 36px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 255, 0.8) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 
+    0 10px 40px rgba(99, 102, 241, 0.1),
+    0 4px 15px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 
+    0 20px 60px rgba(99, 102, 241, 0.2),
+    0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.statIcon {
+  font-size: 2rem;
+}
+
+.statValue {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.backgroundEffects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(99, 102, 241, 0.25) 0%,
+    rgba(99, 102, 241, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+
+.gradientOrb2 {
+  position: absolute;
+  bottom: -5%;
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 92, 246, 0.2) 0%,
+    rgba(168, 85, 247, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+}
+
+.gradientOrb3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(16, 185, 129, 0.15) 0%,
+    rgba(52, 211, 153, 0.05) 40%,
+    transparent 70%
+  );
+  filter: blur(70px);
+}
+
+.floatingParticle1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+}
+
+.floatingParticle2 {
+  position: absolute;
+  bottom: 25%;
+  right: 12%;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(52, 211, 153, 0.1) 100%);
+  border: 2px solid rgba(16, 185, 129, 0.2);
+}
+
+.floatingParticle3 {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(168, 85, 247, 0.1) 100%);
+  border: 2px solid rgba(139, 92, 246, 0.15);
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  mix-blend-mode: overlay;
+}
+
+@media (max-width: 900px) {
+  .screen {
+    width: 550px;
+    height: 350px;
+  }
+
+  .base {
+    width: 620px;
+  }
+
+  .baseFront {
+    width: 620px;
+  }
+
+  .shadow {
+    width: 500px;
+  }
+
+  .regionBadge {
+    left: -10px;
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hackathon {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .macbookWrapper {
+    margin-bottom: 40px;
+  }
+
+  .screen {
+    width: 300px;
+    height: 195px;
+    padding: 8px 8px 0 8px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .screenFrame {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .cameraNotch {
+    width: 45px;
+    height: 12px;
+    top: 4px;
+  }
+
+  .camera {
+    width: 4px;
+    height: 4px;
+  }
+
+  .base {
+    width: 340px;
+    height: 10px;
+  }
+
+  .keyboard {
+    width: 250px;
+    height: 3px;
+  }
+
+  .baseFront {
+    width: 340px;
+    height: 5px;
+  }
+
+  .indent {
+    width: 70px;
+    height: 3px;
+  }
+
+  .shadow {
+    width: 260px;
+    height: 20px;
+    bottom: -18px;
+  }
+
+  .floatingBadge {
+    top: 15px;
+    right: 0;
+    padding: 8px 14px;
+    border-radius: 12px;
+  }
+
+  .badgeIcon {
+    font-size: 1rem;
+  }
+
+  .badgeText {
+    font-size: 0.88rem;
+  }
+
+  .regionBadge {
+    bottom: 50px;
+    left: 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+
+  .regionIcon {
+    font-size: 0.9rem;
+  }
+
+  .regionText {
+    font-size: 0.75rem;
+  }
+
+  .stats {
+    gap: 14px;
+  }
+
+  .statItem {
+    padding: 14px 20px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .statIcon {
+    font-size: 1.3rem;
+  }
+
+  .statValue {
+    font-size: 1.2rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  .floatingParticle1,
+  .floatingParticle2,
+  .floatingParticle3 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hackathon {
+    padding: 30px 0;
+  }
+  
+  .container {
+    padding: 0 14px;
+  }
+  
+  .screen {
+    width: 260px;
+    height: 170px;
+  }
+  
+  .base {
+    width: 300px;
+  }
+  
+  .baseFront {
+    width: 300px;
+  }
+  
+  .shadow {
+    width: 220px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .statItem {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+}
+

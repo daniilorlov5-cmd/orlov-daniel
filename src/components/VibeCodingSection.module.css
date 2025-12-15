@@ -1,0 +1,567 @@
+.vibeCoding {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff4444 100%);
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.infoCard {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 252, 250, 0.95) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 32px;
+  padding: 45px;
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  box-shadow: 
+    0 30px 80px rgba(255, 107, 53, 0.12),
+    0 15px 40px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  overflow: visible;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 40px 100px rgba(255, 107, 53, 0.18),
+    0 20px 50px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: -15px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.35) 0%,
+    rgba(247, 147, 30, 0.2) 25%,
+    transparent 50%,
+    rgba(139, 92, 246, 0.15) 75%,
+    rgba(139, 92, 246, 0.3) 100%
+  );
+  border-radius: 45px;
+  z-index: -1;
+  filter: blur(35px);
+  opacity: 0.6;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.infoBlock {
+  margin-bottom: 35px;
+}
+
+.infoLabel {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff6b35;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.infoText {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.8;
+}
+
+.techBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.techLabel {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techTag {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.08) 100%);
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 107, 53, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.techTag:hover {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.15) 100%);
+  border-color: rgba(255, 107, 53, 0.5);
+  color: #ff6b35;
+}
+
+.cornerAccent {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  border-radius: 16px;
+  opacity: 0.9;
+  transform: rotate(15deg);
+  box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
+}
+
+.cornerAccent2 {
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  border-radius: 12px;
+  opacity: 0.8;
+  transform: rotate(-10deg);
+  box-shadow: 0 6px 25px rgba(139, 92, 246, 0.4);
+}
+
+.demoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.demoWrapper {
+  position: relative;
+}
+
+.demoGlow {
+  position: absolute;
+  inset: -20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.25) 0%,
+    rgba(247, 147, 30, 0.15) 30%,
+    rgba(139, 92, 246, 0.15) 70%,
+    rgba(139, 92, 246, 0.25) 100%
+  );
+  border-radius: 40px;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.browserFrame {
+  background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 40px 100px rgba(0, 0, 0, 0.3),
+    0 20px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.browserHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: linear-gradient(180deg, #374151 0%, #2d3748 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.browserDots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.browserUrl {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.urlIcon {
+  font-size: 0.75rem;
+}
+
+.browserContent {
+  position: relative;
+  background: #e8f4fc;
+  overflow: hidden;
+}
+
+.demoImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.demoWrapper:hover .demoImage {
+  transform: scale(1.02);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.mcpBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.1) 0%,
+    rgba(168, 85, 247, 0.05) 100%
+  );
+  border: 1.5px solid rgba(139, 92, 246, 0.25);
+  border-radius: 50px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mcpBadge:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.2) 0%,
+    rgba(168, 85, 247, 0.1) 100%
+  );
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+}
+
+.mcpIcon {
+  font-size: 1.5rem;
+}
+
+.mcpText {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  letter-spacing: 0.5px;
+}
+
+.backgroundEffects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  top: 5%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 107, 53, 0.25) 0%,
+    rgba(247, 147, 30, 0.1) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+}
+
+.gradientOrb2 {
+  position: absolute;
+  bottom: 5%;
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 92, 246, 0.2) 0%,
+    rgba(168, 85, 247, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(100px);
+}
+
+.gradientOrb3 {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 107, 53, 0.15) 0%,
+    rgba(139, 92, 246, 0.1) 50%,
+    transparent 70%
+  );
+  filter: blur(70px);
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #ff6b35 0%, #8b5cf6 100%);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 107, 53, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 53, 0.025) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  mix-blend-mode: overlay;
+}
+
+@media (max-width: 1100px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .infoCard {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .vibeCoding {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .infoCard {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .infoBlock {
+    margin-bottom: 24px;
+  }
+  
+  .infoLabel {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .infoText {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  
+  .techLabel {
+    font-size: 1.1rem;
+  }
+  
+  .techTag {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+  
+  .demoSection {
+    gap: 20px;
+  }
+
+  .cornerAccent {
+    width: 35px;
+    height: 35px;
+    top: -6px;
+    right: -6px;
+    border-radius: 12px;
+  }
+
+  .cornerAccent2 {
+    width: 24px;
+    height: 24px;
+    bottom: -6px;
+    left: -6px;
+  }
+
+  .floatingBadge {
+    padding: 8px 14px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .badgeIcon {
+    font-size: 1rem;
+  }
+
+  .badgeText {
+    font-size: 0.75rem;
+  }
+  
+  .browserFrame {
+    border-radius: 14px;
+  }
+
+  .browserHeader {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .browserUrl {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .mcpBadge {
+    padding: 10px 20px;
+    margin-top: 14px;
+  }
+  
+  .mcpIcon {
+    font-size: 1.2rem;
+  }
+  
+  .mcpText {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vibeCoding {
+    padding: 30px 0;
+  }
+  
+  .container {
+    padding: 0 14px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .infoCard {
+    padding: 20px 16px;
+  }
+}
+

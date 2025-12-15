@@ -1,0 +1,182 @@
+.speakingGrowth {
+  position: relative;
+  padding: 47px 0;
+  background: linear-gradient(180deg, 
+    #f0f4f8 0%,
+    #e8eef5 50%,
+    #f0f4f8 100%
+  );
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin: 0 0 70px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  background: #e2e8f0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.captionBox {
+  margin-top: -24px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: calc(100% - 32px);
+  z-index: 1;
+}
+
+.caption {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #475569;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .speakingGrowth {
+    padding: 33px 0;
+  }
+
+  .cardsContainer {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .card {
+    width: 300px;
+  }
+
+  .title {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .speakingGrowth {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .title br {
+    display: none;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .imageWrapper {
+    border-radius: 18px;
+  }
+
+  .captionBox {
+    width: calc(100% - 20px);
+    padding: 14px 16px;
+    margin-top: -20px;
+    border-radius: 14px;
+  }
+
+  .caption {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .speakingGrowth {
+    padding: 30px 0;
+  }
+  
+  .container {
+    padding: 0 14px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 28px;
+  }
+  
+  .card {
+    max-width: 260px;
+  }
+  
+  .captionBox {
+    padding: 12px 14px;
+  }
+  
+  .caption {
+    font-size: 0.8rem;
+  }
+}

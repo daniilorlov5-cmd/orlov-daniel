@@ -1,0 +1,462 @@
+.hero {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 60px 80px 50px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.content {
+  flex: 1;
+  max-width: 650px;
+}
+
+.name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 44px;
+  max-width: 620px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contactCard {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 
+    0 4px 24px rgba(139, 92, 246, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.contactCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 32px rgba(139, 92, 246, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.contactInfo {
+  margin-bottom: 0;
+}
+
+.contactInfo p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.label {
+  color: var(--text-muted);
+}
+
+.experienceBtn {
+  display: inline-block;
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 
+    0 4px 16px rgba(139, 92, 246, 0.35),
+    0 2px 4px rgba(139, 92, 246, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.experienceBtn:hover {
+  box-shadow: 
+    0 6px 24px rgba(139, 92, 246, 0.45),
+    0 4px 8px rgba(139, 92, 246, 0.25);
+}
+
+.eduCard {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 
+    0 4px 24px rgba(139, 92, 246, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+  max-width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eduCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 32px rgba(139, 92, 246, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.eduIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+
+.eduIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.eduMain {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.eduSub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.photoWrapper {
+  position: relative;
+  flex-shrink: 0;
+  perspective: 1500px;
+}
+
+.flipContainer {
+  width: 480px;
+  height: 640px;
+  perspective: 1500px;
+}
+
+.flipCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.flipContainer:hover .flipCard {
+  transform: rotateY(180deg);
+}
+
+.flipFront,
+.flipBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.flipFront {
+  z-index: 2;
+}
+
+.flipBack {
+  transform: rotateY(180deg);
+  background: url('/photo/Рисунок37.jpg') center top / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 25px 80px rgba(139, 92, 246, 0.25),
+    0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.flipBack::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 15, 35, 0.3) 0%,
+    rgba(15, 15, 35, 0.6) 50%,
+    rgba(15, 15, 35, 0.85) 100%
+  );
+  border-radius: 24px;
+}
+
+.backContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.backTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.backText {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.backButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+}
+
+.backButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.5);
+}
+
+.photoFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  box-shadow: 
+    0 25px 80px rgba(139, 92, 246, 0.2),
+    0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.photoGlow {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    padding: 13px;
+  }
+  
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .content {
+    max-width: 100%;
+  }
+  
+  .name {
+    font-size: 3.5rem;
+  }
+  
+  .description {
+    max-width: 100%;
+  }
+  
+  .cards {
+    justify-content: center;
+  }
+  
+  .flipContainer {
+    width: 350px;
+    height: 470px;
+  }
+  
+  .photoFrame {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 16px 20px;
+  }
+  
+  .container {
+    gap: 30px;
+  }
+  
+  .name {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  
+  .cards {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .contactCard {
+    padding: 18px;
+    min-height: auto;
+    border-radius: 14px;
+  }
+  
+  .contactInfo p {
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+  }
+  
+  .experienceBtn {
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  .eduCard {
+    max-width: 100%;
+    padding: 18px;
+  }
+  
+  .eduMain {
+    font-size: 0.88rem;
+  }
+  
+  .eduSub {
+    font-size: 0.75rem;
+  }
+  
+  .flipContainer {
+    width: 240px;
+    height: 320px;
+  }
+  
+  .photoFrame {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+  }
+  
+  .backTitle {
+    font-size: 1.3rem;
+  }
+  
+  .backText {
+    font-size: 0.88rem;
+    max-width: 200px;
+  }
+  
+  .backButton {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    margin-top: 12px;
+  }
+  
+  .backContent {
+    gap: 12px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 24px 14px 16px;
+  }
+  
+  .name {
+    font-size: 1.85rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .description {
+    font-size: 0.92rem;
+  }
+  
+  .flipContainer {
+    width: 200px;
+    height: 270px;
+  }
+  
+  .contactCard,
+  .eduCard {
+    padding: 14px;
+  }
+}
+

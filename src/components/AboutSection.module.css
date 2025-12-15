@@ -1,0 +1,306 @@
+.about {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 50px 80px;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.02) 0%, transparent 50%, rgba(139, 92, 246, 0.02) 100%);
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.aboutCard,
+.skillsCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 
+    0 8px 40px rgba(139, 92, 246, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  perspective: 1000px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutCard {
+  max-width: 560px;
+}
+
+.skillsCard {
+  max-width: 560px;
+}
+
+.cardGradient {
+  display: none;
+}
+
+.cardShimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(139, 92, 246, 0.03) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.cardTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.aboutText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 0;
+}
+
+.aboutText:first-child {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--text-muted);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.skillItem:hover .checkIcon {
+  color: var(--accent);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.highlighted .checkIcon {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.checkIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.skillText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  padding-top: 4px;
+  transition: color 0.3s ease;
+}
+
+.highlighted .skillText {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.skillItem:hover .skillText {
+  color: var(--text-dark);
+}
+
+.decorativeElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decorCircle1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+}
+
+.decorCircle2 {
+  position: absolute;
+  bottom: 15%;
+  right: 8%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, transparent 70%);
+}
+
+.decorLine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+  transform-origin: center;
+}
+
+@media (max-width: 1200px) {
+  .about {
+    padding: 20px 40px;
+  }
+  
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .aboutCard,
+  .skillsCard {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 20px 16px;
+  }
+  
+  .container {
+    gap: 20px;
+  }
+  
+  .aboutCard,
+  .skillsCard {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .cardTitle::after {
+    width: 40px;
+    height: 2px;
+    bottom: -8px;
+  }
+  
+  .aboutContent {
+    gap: 14px;
+  }
+  
+  .aboutText {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  
+  .aboutText:first-child {
+    font-size: 0.95rem;
+  }
+  
+  .skillsList {
+    gap: 14px;
+  }
+  
+  .skillItem {
+    gap: 12px;
+  }
+  
+  .skillText {
+    font-size: 0.88rem;
+    padding-top: 2px;
+  }
+  
+  .checkIcon {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .decorCircle1,
+  .decorCircle2 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 16px 14px;
+  }
+  
+  .aboutCard,
+  .skillsCard {
+    padding: 18px 16px;
+  }
+  
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+  
+  .aboutText {
+    font-size: 0.85rem;
+  }
+  
+  .skillText {
+    font-size: 0.85rem;
+  }
+  
+  .checkIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
+

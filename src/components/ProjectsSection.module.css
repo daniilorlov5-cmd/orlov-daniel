@@ -1,0 +1,330 @@
+.projects {
+  min-height: auto;
+  position: relative;
+  z-index: 1;
+  padding: 17px 80px;
+  background: linear-gradient(180deg, 
+    rgba(226, 232, 240, 0.3) 0%, 
+    rgba(241, 245, 249, 0.8) 50%,
+    rgba(226, 232, 240, 0.3) 100%
+  );
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.projectCard {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.topRow .imageWrapper {
+  height: 400px;
+}
+
+.topRow .projectImage {
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.bottomRow .imageWrapper {
+  height: auto;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 40px rgba(45, 53, 97, 0.1);
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.projectImage.blurred {
+  filter: blur(6px);
+}
+
+.ndaBadge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  transform: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: rgba(45, 53, 97, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+  z-index: 10;
+}
+
+.lockIcon {
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ndaBadge span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.imageOverlay {
+  display: none;
+}
+
+
+.effectTilt .imageWrapper {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 
+    0 15px 50px rgba(45, 53, 97, 0.12),
+    0 5px 15px rgba(139, 92, 246, 0.08);
+}
+
+
+.effectPerspective .imageWrapper {
+  background: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.08);
+  box-shadow: 
+    0 20px 60px rgba(45, 53, 97, 0.1),
+    -10px 10px 30px rgba(139, 92, 246, 0.05);
+}
+
+.perspectiveShine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+.effectGlow .imageWrapper {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 
+    0 0 0 1px rgba(139, 92, 246, 0.05),
+    0 20px 50px rgba(139, 92, 246, 0.12),
+    0 0 80px rgba(139, 92, 246, 0.08);
+}
+
+.glowEffect {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 92, 246, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+
+.effectFloat .imageWrapper {
+  background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 
+    0 25px 60px rgba(45, 53, 97, 0.12),
+    0 8px 20px rgba(139, 92, 246, 0.06);
+}
+
+
+.decorativeElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.decorBlob1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(139, 92, 246, 0.08) 0%,
+    rgba(139, 92, 246, 0.03) 40%,
+    transparent 70%
+  );
+  filter: blur(40px);
+}
+
+.decorBlob2 {
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(167, 139, 250, 0.06) 0%,
+    rgba(167, 139, 250, 0.02) 40%,
+    transparent 70%
+  );
+  filter: blur(50px);
+}
+
+@media (max-width: 1200px) {
+  .projects {
+    padding: 20px 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .projectsGrid {
+    gap: 30px;
+  }
+  
+  .topRow .imageWrapper {
+    height: 350px;
+  }
+}
+
+@media (max-width: 900px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .header {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 20px 16px;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .projectsGrid {
+    gap: 24px;
+  }
+  
+  .projectCard {
+    border-radius: 14px;
+  }
+  
+  .imageWrapper {
+    border-radius: 14px;
+  }
+  
+  .topRow .imageWrapper {
+    height: 240px;
+  }
+  
+  .ndaBadge {
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+  
+  .lockIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .ndaBadge span {
+    font-size: 0.9rem;
+    letter-spacing: 1.8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 16px 14px;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .topRow .imageWrapper {
+    height: 200px;
+  }
+  
+  .ndaBadge {
+    padding: 7px 12px;
+  }
+  
+  .ndaBadge span {
+    font-size: 0.85rem;
+  }
+}
+

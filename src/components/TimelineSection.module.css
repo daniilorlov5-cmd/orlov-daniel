@@ -1,0 +1,441 @@
+.timeline {
+  min-height: auto;
+  position: relative;
+  z-index: 1;
+  padding: 50px 80px;
+  background: linear-gradient(180deg, 
+    rgba(241, 245, 249, 0.6) 0%, 
+    rgba(248, 250, 252, 0.95) 30%,
+    rgba(248, 250, 252, 0.95) 70%,
+    rgba(241, 245, 249, 0.6) 100%
+  );
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timelineWrapper {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timelineDates {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.dateMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.dateDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.2);
+  border: 3px solid var(--accent);
+  position: relative;
+}
+
+.dateDot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.dateLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.08);
+}
+
+.dateMonth {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dateYear {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.timelineLine {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  right: 8px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(139, 92, 246, 0.3) 0%,
+    rgba(139, 92, 246, 0.5) 50%,
+    rgba(139, 92, 246, 0.3) 100%
+  );
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.timelineLineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.projectsGrid {
+  position: relative;
+  min-height: 500px;
+}
+
+.projectRow {
+  display: flex;
+  position: relative;
+  margin-bottom: 16px;
+  min-height: 50px;
+}
+
+.projectCard {
+  position: absolute;
+  padding: 12px 20px;
+  border-radius: 25px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.projectCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.green {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.red {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.gray {
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+}
+
+.lavender {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+}
+
+.teal {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+}
+
+.darkBlue {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.orange {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
+.projectCard.green:hover {
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+}
+
+.projectCard.purple:hover {
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+}
+
+.projectCard.red:hover {
+  box-shadow: 0 12px 35px rgba(239, 68, 68, 0.4);
+}
+
+.projectCard.teal:hover {
+  box-shadow: 0 12px 35px rgba(20, 184, 166, 0.4);
+}
+
+.projectCard.darkBlue:hover {
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+}
+
+.projectCard.orange:hover {
+  box-shadow: 0 12px 35px rgba(249, 115, 22, 0.4);
+}
+
+.projectCard.cyan:hover {
+  box-shadow: 0 12px 35px rgba(6, 182, 212, 0.4);
+}
+
+.projectDuration {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: currentColor;
+  opacity: 0.3;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.verticalConnector {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.4) 0%, transparent 100%);
+  z-index: 0;
+}
+
+.decorativeOrb1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.decorativeOrb2 {
+  position: absolute;
+  bottom: 15%;
+  right: 8%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  animation: floatOrb 10s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.glowEffect {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@media (max-width: 1200px) {
+  .timeline {
+    padding: 17px 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .projectCard {
+    font-size: 0.8rem;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    padding: 13px 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .timelineDates {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    gap: 40px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .dateMarker {
+    flex-shrink: 0;
+  }
+  
+  .projectsGrid {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .projectCard {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: 30px 16px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.92rem;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .timelineWrapper {
+    padding: 20px 0;
+  }
+  
+  .timelineDates {
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  
+  .dateLabel {
+    padding: 6px 12px;
+    border-radius: 10px;
+  }
+  
+  .dateMonth {
+    font-size: 0.65rem;
+  }
+  
+  .dateYear {
+    font-size: 0.95rem;
+  }
+  
+  .dateDot {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+  
+  .dateDot::after {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .timelineLine {
+    height: 2px;
+    top: 5px;
+  }
+  
+  .projectsGrid {
+    min-height: auto;
+    overflow-x: visible;
+  }
+  
+  .projectRow {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 12px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    padding: 24px 14px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .timelineDates {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    overflow-x: visible;
+  }
+  
+  .projectCard {
+    position: relative;
+    left: 0 !important;
+    width: 100% !important;
+    min-width: 0;
+    white-space: normal;
+    font-size: 0.74rem;
+    padding: 8px 12px;
+    border-radius: 16px;
+    margin-bottom: 8px;
+  }
+}
+

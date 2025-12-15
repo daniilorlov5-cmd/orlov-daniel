@@ -1,0 +1,462 @@
+.tgScope {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  letter-spacing: 0.08em;
+  text-shadow: 0 4px 30px rgba(33, 150, 243, 0.15);
+}
+
+.tgHighlight {
+  background: linear-gradient(135deg, #2196f3 0%, #00bcd4 50%, #4caf50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #8b9dc3;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.screenshotsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.screenshotLink {
+  display: block;
+  text-decoration: none;
+  perspective: 1200px;
+}
+
+.screenshotWrapper {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.browserFrame {
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    0 15px 40px rgba(33, 150, 243, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.browserHeader {
+  background: linear-gradient(180deg, #2a2a4a 0%, #1e1e38 100%);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.browserDots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.browserUrl {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.screenshotContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.mainScreenshot {
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: cover;
+}
+
+.screenshotShine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.screenshotGlow {
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(33, 150, 243, 0.2) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+
+.visitButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  background: linear-gradient(135deg, #2196f3 0%, #1976d2 50%, #1565c0 100%);
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 60px;
+  box-shadow: 
+    0 15px 40px rgba(33, 150, 243, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.visitButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visitButton:hover::before {
+  opacity: 1;
+}
+
+.buttonIcon {
+  font-size: 1.3rem;
+}
+
+.buttonArrow {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.featureCard {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 255, 0.9) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(33, 150, 243, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.06),
+    0 4px 15px rgba(33, 150, 243, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  border-color: rgba(33, 150, 243, 0.3);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 8px 25px rgba(33, 150, 243, 0.15);
+}
+
+.cardNumber {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.15) 0%, rgba(0, 188, 212, 0.1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.featureTitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  padding-right: 50px;
+}
+
+.featureDescription {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #5a5a7a;
+}
+
+.cardGlow {
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(33, 150, 243, 0.08) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featureCard:hover .cardGlow {
+  opacity: 1;
+}
+
+.backgroundEffects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(33, 150, 243, 0.25) 0%,
+    rgba(33, 150, 243, 0.05) 40%,
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+
+.gradientOrb2 {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 188, 212, 0.2) 0%,
+    rgba(76, 175, 80, 0.08) 40%,
+    transparent 70%
+  );
+  filter: blur(80px);
+}
+
+.gradientOrb3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(249, 168, 37, 0.1) 0%,
+    transparent 60%
+  );
+  filter: blur(100px);
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(33, 150, 243, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 150, 243, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  mix-blend-mode: overlay;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .screenshotsSection {
+    order: 1;
+  }
+
+  .featuresGrid {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .tgScope {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+    letter-spacing: 0.04em;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .content {
+    gap: 40px;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .featureCard {
+    padding: 22px;
+    border-radius: 16px;
+  }
+  
+  .featureTitle {
+    font-size: 1rem;
+    padding-right: 40px;
+  }
+  
+  .featureDescription {
+    font-size: 0.85rem;
+  }
+  
+  .cardNumber {
+    font-size: 2rem;
+    top: 12px;
+    right: 12px;
+  }
+
+  .mainScreenshot {
+    max-width: 100%;
+  }
+  
+  .browserHeader {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  
+  .browserUrl {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .visitButton {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tgScope {
+    padding: 30px 0;
+  }
+  
+  .container {
+    padding: 0 14px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .featureCard {
+    padding: 18px;
+  }
+}
+
