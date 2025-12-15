@@ -503,6 +503,10 @@
   .label {
     font-size: 0.82rem;
   }
+
+  .imageShine {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

@@ -307,6 +307,10 @@
     border-radius: 20px;
   }
 
+  .imageShine {
+    display: none;
+  }
+
   .content {
     padding: 18px 18px 22px;
   }

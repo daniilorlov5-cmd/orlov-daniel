@@ -316,6 +316,11 @@
     border-radius: 16px;
   }
 
+  .photoShine,
+  .sidePhotoShine {
+    display: none;
+  }
+
   .teamText {
     font-size: 0.95rem;
     line-height: 1.6;
