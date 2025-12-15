@@ -1,11 +1,11 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './CRMProjectSection.module.css'
-import img50 from '../../photo/Рисунок50.png'
-import img51 from '../../photo/Рисунок51.png'
-import mobileScreens from '../../photo/mobile-screens.png'
-import img48 from '../../photo/Рисунок48.png'
-import img52 from '../../photo/Рисунок52.png'
+import img50 from '../assets/photo/Рисунок50.png'
+import img51 from '../assets/photo/Рисунок51.png'
+import mobileScreens from '../assets/photo/mobile-screens.png'
+import img48 from '../assets/photo/Рисунок48.png'
+import img52 from '../assets/photo/Рисунок52.png'
 
 interface Screenshot {
   image: string

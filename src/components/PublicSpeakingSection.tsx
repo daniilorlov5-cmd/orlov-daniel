@@ -1,9 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import styles from './PublicSpeakingSection.module.css'
-import img58 from '../../photo/Рисунок58.jpg'
-import img59 from '../../photo/Рисунок59.jpg'
-import img60 from '../../photo/Рисунок60.jpg'
+import img58 from '../assets/photo/Рисунок58.jpg'
+import img59 from '../assets/photo/Рисунок59.jpg'
+import img60 from '../assets/photo/Рисунок60.jpg'
 
 interface SpeakingCard {
   image: string

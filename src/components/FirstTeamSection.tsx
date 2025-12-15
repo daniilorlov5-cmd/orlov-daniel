@@ -2,9 +2,9 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './FirstTeamSection.module.css'
 
-import teamPhoto1 from '../../photo/Рисунок42.jpg'
-import teamPhoto2 from '../../photo/Рисунок43.jpg'
-import teamPhoto3 from '../../photo/Рисунок44.jpg'
+import teamPhoto1 from '../assets/photo/Рисунок42.jpg'
+import teamPhoto2 from '../assets/photo/Рисунок43.jpg'
+import teamPhoto3 from '../assets/photo/Рисунок44.jpg'
 
 function FirstTeamSection() {
   const sectionRef = useRef(null)

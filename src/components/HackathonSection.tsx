@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './HackathonSection.module.css'
 
-import hackathonPhoto from '../../photo/Рисунок41.jpg'
+import hackathonPhoto from '../assets/photo/Рисунок41.jpg'
 
 function HackathonSection() {
   const sectionRef = useRef(null)

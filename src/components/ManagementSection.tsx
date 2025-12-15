@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import styles from './ManagementSection.module.css'
-import img61 from '../../photo/Рисунок61.jpg'
+import img61 from '../assets/photo/Рисунок61.jpg'
 
 const managementPoints = [
   "Создаю структуру, карту объектов, логику сценариев, прототипы и формирую чёткое ТЗ для команды;",

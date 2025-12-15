@@ -1,9 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './TeamValueSection.module.css'
-import img38 from '../../photo/Рисунок38.jpg'
-import img39 from '../../photo/Рисунок39.jpg'
-import img40 from '../../photo/Рисунок40.png'
+import img38 from '../assets/photo/Рисунок38.jpg'
+import img39 from '../assets/photo/Рисунок39.jpg'
+import img40 from '../assets/photo/Рисунок40.png'
 
 function TeamValueSection() {
   const sectionRef = useRef(null)

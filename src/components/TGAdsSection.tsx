@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './TGAdsSection.module.css'
-import img45 from '../../photo/Рисунок45.jpg'
+import img45 from '../assets/photo/Рисунок45.jpg'
 
 const stats = [
   {

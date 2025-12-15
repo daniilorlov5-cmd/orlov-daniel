@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import styles from './StatsSection.module.css'
-import img69 from '../../photo/Рисунок69.jpg'
+import img69 from '../assets/photo/Рисунок69.jpg'
 
 interface StatCardProps {
   number: string

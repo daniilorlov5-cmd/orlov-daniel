@@ -1,10 +1,10 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './ProjectsSection.module.css'
-import img63 from '../../photo/Рисунок63.png'
-import img64 from '../../photo/Рисунок64.png'
-import img65 from '../../photo/Рисунок65.png'
-import img66 from '../../photo/Рисунок66.png'
+import img63 from '../assets/photo/Рисунок63.png'
+import img64 from '../assets/photo/Рисунок64.png'
+import img65 from '../assets/photo/Рисунок65.png'
+import img66 from '../assets/photo/Рисунок66.png'
 
 const projects = [
   {
