@@ -96,7 +96,7 @@ function HeroSection() {
                   />
                 </div>
               </div>
-              <div className={styles.flipBack}>
+              <div className={styles.flipBack} style={{ backgroundImage: `url(${heroPhoto})` }}>
                 <div className={styles.backContent}>
                   <h3 className={styles.backTitle}>Готов к сотрудничеству</h3>
                   <p className={styles.backText}>Product Manager с опытом создания успешных digital-продуктов</p>
