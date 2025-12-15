@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import styles from './StatsSection.module.css'
+import img69 from '../../photo/Рисунок69.jpg'
 
 interface StatCardProps {
   number: string
@@ -112,7 +113,7 @@ function StatsSection() {
               transition={{ duration: 1, delay: 0.3 }}
             />
             <motion.img 
-              src="/photo/Рисунок69.jpg" 
+              src={img69} 
               alt="Даниил Орлов на TG Market Conf" 
               className={styles.photo}
               whileHover={{ scale: 1.02 }}

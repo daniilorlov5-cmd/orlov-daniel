@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import styles from './ManagementSection.module.css'
+import img61 from '../../photo/Рисунок61.jpg'
 
 const managementPoints = [
   "Создаю структуру, карту объектов, логику сценариев, прототипы и формирую чёткое ТЗ для команды;",
@@ -75,7 +76,7 @@ function PhoneMockup() {
           
           <div className={styles.phoneScreen}>
             <motion.img 
-              src="/photo/Рисунок61.jpg" 
+              src={img61} 
               alt="Форум Время цифры 2025"
               className={styles.phoneImage}
               animate={{

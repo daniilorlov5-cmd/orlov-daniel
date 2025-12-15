@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './TGAdsSection.module.css'
+import img45 from '../../photo/Рисунок45.jpg'
 
 const stats = [
   {
@@ -109,7 +110,7 @@ function TGAdsSection() {
                 }}
               >
                 <img 
-                  src="/photo/Рисунок45.jpg" 
+                  src={img45} 
                   alt="TG Ads Campaign"
                   className={styles.phoneImage}
                 />

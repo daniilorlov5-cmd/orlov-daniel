@@ -1,25 +1,29 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './ProjectsSection.module.css'
+import img63 from '../../photo/Рисунок63.png'
+import img64 from '../../photo/Рисунок64.png'
+import img65 from '../../photo/Рисунок65.png'
+import img66 from '../../photo/Рисунок66.png'
 
 const projects = [
   {
-    image: '/photo/Рисунок63.png',
+    image: img63,
     effect: 'tilt',
     isNDA: false
   },
   {
-    image: '/photo/Рисунок64.png',
+    image: img64,
     effect: 'perspective',
     isNDA: false
   },
   {
-    image: '/photo/Рисунок65.png',
+    image: img65,
     effect: 'glow',
     isNDA: true
   },
   {
-    image: '/photo/Рисунок66.png',
+    image: img66,
     effect: 'float',
     isNDA: true
   }

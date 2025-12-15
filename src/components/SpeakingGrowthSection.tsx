@@ -1,6 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './SpeakingGrowthSection.module.css'
+import img55 from '../../photo/Рисунок55.jpg'
+import img56 from '../../photo/Рисунок56.jpg'
+import img57 from '../../photo/Рисунок57.jpg'
 
 interface GrowthCard {
   image: string
@@ -9,15 +12,15 @@ interface GrowthCard {
 
 const growthData: GrowthCard[] = [
   {
-    image: '/photo/Рисунок55.jpg',
+    image: img55,
     caption: 'Первый микрофон — первое выступление'
   },
   {
-    image: '/photo/Рисунок56.jpg',
+    image: img56,
     caption: 'Первый инвестор — точка, с которой начинается обязательство'
   },
   {
-    image: '/photo/Рисунок57.jpg',
+    image: img57,
     caption: 'Каждая идея начинается с рамки — внутри неё рождается продукт'
   }
 ]

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import styles from './HeroSection.module.css'
+import heroPhoto from '../../photo/Рисунок37.jpg'
 
 function HeroSection() {
   return (
@@ -89,7 +90,7 @@ function HeroSection() {
               <div className={styles.flipFront}>
                 <div className={styles.photoFrame}>
                   <img 
-                    src="/photo/Рисунок37.jpg" 
+                    src={heroPhoto} 
                     alt="Даниил Орлов" 
                     className={styles.photo}
                   />

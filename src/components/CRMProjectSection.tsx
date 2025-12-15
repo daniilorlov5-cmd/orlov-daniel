@@ -1,6 +1,11 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './CRMProjectSection.module.css'
+import img50 from '../../photo/Рисунок50.png'
+import img51 from '../../photo/Рисунок51.png'
+import mobileScreens from '../../photo/mobile-screens.png'
+import img48 from '../../photo/Рисунок48.png'
+import img52 from '../../photo/Рисунок52.png'
 
 interface Screenshot {
   image: string
@@ -12,24 +17,24 @@ interface Screenshot {
 
 const screenshots: Screenshot[] = [
   {
-    image: '/photo/Рисунок50.png',
+    image: img50,
     label: 'Формирование анимаций',
     link: 'https://jpvision.ru/'
   },
   {
-    image: '/photo/Рисунок51.png',
+    image: img51,
     label: 'Реализация графиков'
   },
   {
-    image: '/photo/mobile-screens.png',
+    image: mobileScreens,
     label: 'Прототипирование мобильной версии'
   },
   {
-    image: '/photo/Рисунок48.png',
+    image: img48,
     label: 'Реализация сбора статистики'
   },
   {
-    image: '/photo/Рисунок52.png',
+    image: img52,
     label: '',
     isMain: true
   }

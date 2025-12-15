@@ -1,6 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import styles from './PublicSpeakingSection.module.css'
+import img58 from '../../photo/Рисунок58.jpg'
+import img59 from '../../photo/Рисунок59.jpg'
+import img60 from '../../photo/Рисунок60.jpg'
 
 interface SpeakingCard {
   image: string
@@ -10,17 +13,17 @@ interface SpeakingCard {
 
 const speakingData: SpeakingCard[] = [
   {
-    image: '/photo/Рисунок58.jpg',
+    image: img58,
     title: 'На крупнейших рекламных форумах',
     description: 'Выступал спикером на НРФ, TGMarket и других отраслевых конференциях, делясь опытом работы с продуктами, аналитикой Telegram и построением digital-решений.'
   },
   {
-    image: '/photo/Рисунок59.jpg',
+    image: img59,
     title: 'Продуктовые доклады и трекинг студенческих команд',
     description: 'Проводил доклады о разработке сервисов, работе с гипотезами, метриками, бизнес-моделями и организации командной работы в IT.'
   },
   {
-    image: '/photo/Рисунок60.jpg',
+    image: img60,
     title: 'Инвест-встречи с Яндекс и МТС',
     description: 'Представлял продукты TGScope и JPVision топ-компаниям, демонстрируя ценность решений, экономику, аналитику и потенциал масштабирования.'
   }

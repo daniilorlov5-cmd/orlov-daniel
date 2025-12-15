@@ -200,7 +200,7 @@
 
 .flipBack {
   transform: rotateY(180deg);
-  background: url('/photo/Рисунок37.jpg') center top / cover no-repeat;
+  background: url('../../photo/Рисунок37.jpg') center top / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,6 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './TeamValueSection.module.css'
+import img38 from '../../photo/Рисунок38.jpg'
+import img39 from '../../photo/Рисунок39.jpg'
+import img40 from '../../photo/Рисунок40.png'
 
 function TeamValueSection() {
   const sectionRef = useRef(null)
@@ -41,7 +44,7 @@ function TeamValueSection() {
             >
               <div className={styles.photoInner}>
                 <img 
-                  src="/photo/Рисунок38.jpg" 
+                  src={img38} 
                   alt="Команда за работой"
                   className={styles.photo}
                 />
@@ -74,7 +77,7 @@ function TeamValueSection() {
             >
               <div className={styles.photoInner}>
                 <img 
-                  src="/photo/Рисунок39.jpg" 
+                  src={img39} 
                   alt="С коллегой на мероприятии"
                   className={styles.photo}
                 />
@@ -118,7 +121,7 @@ function TeamValueSection() {
         >
           <div className={styles.sidePhotoWrapper}>
             <img 
-              src="/photo/Рисунок40.png" 
+              src={img40} 
               alt="С коллегой на конференции TGScope"
               className={styles.sidePhoto}
             />
