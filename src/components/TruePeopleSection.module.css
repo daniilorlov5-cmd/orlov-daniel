@@ -457,6 +457,11 @@
     font-size: 0.78rem;
     min-width: auto;
   }
+
+  .barFillMale::after,
+  .barFillFemale::after {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
