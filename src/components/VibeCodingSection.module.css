@@ -551,7 +551,24 @@
   }
 
   .imageOverlay {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .demoGlow {
     display: none;
+  }
+
+  .demoWrapper:hover .demoImage {
+    transform: none;
+  }
+
+  .demoWrapper:hover {
+    transform: none;
+  }
+
+  .demoImage {
+    transition: none;
   }
 }
 

@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import styles from './VibeCodingSection.module.css'
 import demoImage from '../assets/demo46.png'
 
@@ -36,6 +36,16 @@ function FloatingParticle({ delay, duration, x, y }: { delay: number; duration: 
 function VibeCodingSection() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: "-50px" })
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   return (
     <section ref={sectionRef} className={styles.vibeCoding}>
@@ -152,23 +162,25 @@ function VibeCodingSection() {
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              whileHover={{ 
+              whileHover={!isMobile ? { 
                 scale: 1.02,
                 transition: { duration: 0.3 }
-              }}
+              } : {}}
             >
-              <motion.div 
-                className={styles.demoGlow}
-                animate={{
-                  opacity: [0.3, 0.6, 0.3],
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
+              {!isMobile && (
+                <motion.div 
+                  className={styles.demoGlow}
+                  animate={{
+                    opacity: [0.3, 0.6, 0.3],
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              )}
               
               <div className={styles.browserFrame}>
                 <div className={styles.browserHeader}>
@@ -188,21 +200,23 @@ function VibeCodingSection() {
                     alt="HireSpark Demo" 
                     className={styles.demoImage}
                   />
-                  <motion.div 
-                    className={styles.imageOverlay}
-                    animate={{
-                      background: [
-                        "linear-gradient(45deg, transparent 0%, transparent 100%)",
-                        "linear-gradient(45deg, rgba(255,107,53,0.1) 0%, transparent 50%, rgba(139,92,246,0.1) 100%)",
-                        "linear-gradient(45deg, transparent 0%, transparent 100%)"
-                      ]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
+                  {!isMobile && (
+                    <motion.div 
+                      className={styles.imageOverlay}
+                      animate={{
+                        background: [
+                          "linear-gradient(45deg, transparent 0%, transparent 100%)",
+                          "linear-gradient(45deg, rgba(255,107,53,0.1) 0%, transparent 50%, rgba(139,92,246,0.1) 100%)",
+                          "linear-gradient(45deg, transparent 0%, transparent 100%)"
+                        ]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                  )}
                 </div>
               </div>
 
@@ -213,11 +227,11 @@ function VibeCodingSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 1 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={!isMobile ? { scale: 1.05 } : {}}
             >
               <motion.span 
                 className={styles.mcpIcon}
-                animate={{ rotate: [0, 360] }}
+                animate={!isMobile ? { rotate: [0, 360] } : {}}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
                 ⚙️
