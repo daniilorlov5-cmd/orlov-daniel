@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './SpeakingGrowthSection.module.css'
 import img55 from '../assets/photo/Рисунок55.jpg'
-import img56 from '../assets/photo/Рисунок56.jpg'
+import img56 from '../assets/photo/20251128_144829.jpg'
 import img57 from '../assets/photo/Рисунок57.jpg'
 
 interface GrowthCard {

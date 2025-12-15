@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import styles from './HeroSection.module.css'
-import heroPhoto from '../assets/photo/20251128_144829.jpg'
+import heroPhoto from '../assets/photo/Рисунок37.jpg'
 
 function HeroSection() {
   return (
