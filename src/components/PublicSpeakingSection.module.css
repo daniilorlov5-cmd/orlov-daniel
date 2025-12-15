@@ -311,6 +311,22 @@
     display: none;
   }
 
+  .imageOverlay {
+    display: none;
+  }
+
+  .glowEffect {
+    display: none;
+  }
+
+  .card:hover .imageWrapper {
+    transform: none;
+  }
+
+  .card:hover .image {
+    filter: none;
+  }
+
   .content {
     padding: 18px 18px 22px;
   }

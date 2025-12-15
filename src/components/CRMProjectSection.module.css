@@ -507,6 +507,14 @@
   .imageShine {
     display: none;
   }
+
+  .screenshotCard:hover {
+    transform: none;
+  }
+
+  .screenshotCard:hover .screenshotImage {
+    transform: none;
+  }
 }
 
 @media (max-width: 480px) {

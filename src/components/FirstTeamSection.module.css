@@ -389,8 +389,19 @@
   }
   
   .cardGlow {
-    filter: blur(18px);
-    inset: -10px;
+    display: none;
+  }
+
+  .photoOverlay {
+    display: none;
+  }
+
+  .photoCard:hover .photoWrapper {
+    border-color: rgba(59, 130, 246, 0.15);
+  }
+
+  .photoCard:hover .photo {
+    transform: none;
   }
 
   .floatingCircle1,

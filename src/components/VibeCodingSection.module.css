@@ -545,6 +545,14 @@
   .mcpText {
     font-size: 0.85rem;
   }
+
+  .cardGlow {
+    display: none;
+  }
+
+  .imageOverlay {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

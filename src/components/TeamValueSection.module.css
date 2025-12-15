@@ -321,6 +321,22 @@
     display: none;
   }
 
+  .photoFrame:hover {
+    transform: none;
+  }
+
+  .photoFrame:hover .photo {
+    transform: none;
+  }
+
+  .sideCard:hover {
+    transform: none;
+  }
+
+  .sideCard:hover .sidePhoto {
+    transform: none;
+  }
+
   .teamText {
     font-size: 0.95rem;
     line-height: 1.6;

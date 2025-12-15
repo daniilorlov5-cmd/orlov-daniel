@@ -235,6 +235,18 @@
   .floatingSquare {
     display: none;
   }
+
+  .photoOverlay {
+    display: none;
+  }
+
+  .glowEffect {
+    display: none;
+  }
+
+  .photo {
+    transition: none;
+  }
 }
 
 @media (max-width: 480px) {

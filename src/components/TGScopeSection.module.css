@@ -440,6 +440,14 @@
     padding: 14px 28px;
     font-size: 1rem;
   }
+
+  .cardGlow {
+    display: none;
+  }
+
+  .featureCard:hover .cardGlow {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 480px) {
