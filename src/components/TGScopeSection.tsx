@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styles from './TGScopeSection.module.css'
+import tgScopeScreenshot from '../assets/presentation/2025-12-15_14-28-12.png'
 
 const features = [
   {
@@ -95,7 +96,7 @@ function TGScopeSection() {
                   </div>
                   <div className={styles.screenshotContainer}>
                     <img 
-                      src="/presentation/2025-12-15_14-28-12.png" 
+                      src={tgScopeScreenshot} 
                       alt="TG Scope - Главная страница"
                       className={styles.mainScreenshot}
                     />
