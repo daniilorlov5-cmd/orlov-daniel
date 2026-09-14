@@ -22,7 +22,6 @@ const PRODUCTS: Product[] = [
     facts: ['7 блоков', '4 сервиса по SSO', '137 ручек API', 'NestJS + Nuxt 3'],
     shots: [
       { src: IMG.shotPortal, alt: 'Портал Oreon Group — дашборд сервисов' },
-      { src: IMG.shotPortalTasks, alt: 'Портал Oreon Group — доска задач команды' },
     ],
   },
   {
@@ -32,7 +31,6 @@ const PRODUCTS: Product[] = [
     facts: ['13 разделов', '73 ручки API', 'PostgreSQL + ClickHouse', '~17 000 строк кода'],
     shots: [
       { src: IMG.shotOreonsee, alt: 'Oreonsee — обзор кампании: KPI, бюджет, динамика' },
-      { src: IMG.shotOreonseeStats, alt: 'Oreonsee — статистика: план и факт' },
     ],
     dark: true,
   },
@@ -50,7 +48,6 @@ const PRODUCTS: Product[] = [
     facts: ['10 разделов', '3 площадки', '4 пресета уникализации', 'FastAPI + Next.js 16'],
     shots: [
       { src: IMG.shotPushka, alt: 'Пушка — креативы на одобрении' },
-      { src: IMG.shotPushkaCampaigns, alt: 'Пушка — рекламные кампании клиента' },
     ],
   },
 ]
