@@ -23,7 +23,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font);
   font-size: 3rem;
   font-weight: 700;
   color: var(--primary);
@@ -96,7 +96,6 @@
   gap: 6px;
   padding: 10px 16px;
   background: rgba(45, 53, 97, 0.85);
-  backdrop-filter: blur(10px);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
@@ -175,7 +174,7 @@
   );
   pointer-events: none;
   z-index: -1;
-  filter: blur(30px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 
@@ -209,7 +208,7 @@
     rgba(139, 92, 246, 0.03) 40%,
     transparent 70%
   );
-  filter: blur(40px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .decorBlob2 {
@@ -225,7 +224,7 @@
     rgba(167, 139, 250, 0.02) 40%,
     transparent 70%
   );
-  filter: blur(50px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 @media (max-width: 1200px) {

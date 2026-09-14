@@ -23,7 +23,7 @@
 }
 
 .name {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font);
   font-size: 5.5rem;
   font-weight: 700;
   color: var(--primary);
@@ -56,7 +56,6 @@
 
 .contactCard {
   background: var(--card-bg);
-  backdrop-filter: blur(20px);
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   padding: 24px;
@@ -116,7 +115,6 @@
 
 .eduCard {
   background: var(--card-bg);
-  backdrop-filter: blur(20px);
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   padding: 24px;
@@ -234,7 +232,7 @@
 }
 
 .backTitle {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font);
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
