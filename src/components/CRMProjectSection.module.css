@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font);
   font-size: 3.2rem;
   font-weight: 700;
   color: var(--primary);
@@ -365,7 +365,7 @@
     rgba(139, 92, 246, 0.05) 40%,
     transparent 70%
   );
-  filter: blur(60px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gradientOrb2 {
@@ -381,7 +381,7 @@
     rgba(99, 102, 241, 0.04) 40%,
     transparent 70%
   );
-  filter: blur(70px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gridPattern {

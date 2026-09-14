@@ -40,7 +40,7 @@
   height: 500px;
   background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(60px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gradientOrb2 {
@@ -51,7 +51,7 @@
   height: 600px;
   background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(80px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gradientOrb3 {
@@ -62,7 +62,7 @@
   height: 400px;
   background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(50px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gridPattern {
@@ -90,7 +90,6 @@
   border-radius: 24px;
   border: 1px solid rgba(139, 92, 246, 0.12);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(8px);
 }
 
 .progressTrack {
@@ -168,7 +167,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   color: var(--primary);
