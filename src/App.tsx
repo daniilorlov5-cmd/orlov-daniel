@@ -16,12 +16,12 @@ import FirstTeamSection from './components/FirstTeamSection'
 import HackathonSection from './components/HackathonSection'
 import TeamValueSection from './components/TeamValueSection'
 import ServicesSection from './components/ServicesSection'
-import Background3D from './components/Background3D'
+import Header from './components/Header'
 
 function App() {
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
-      <Background3D />
+    <div id="top" style={{ position: 'relative', minHeight: '100vh' }}>
+      <Header />
       
       <a 
         href="https://t.me/orlovdaniel" 
@@ -60,12 +60,12 @@ bottom: '24px',
 
       <HeroSection />
       <StatsSection />
-      <AboutSection />
-      <ProjectsSection />
+      <div id="about"><AboutSection /></div>
+      <div id="projects"><ProjectsSection /></div>
       <ManagementSection />
       <TimelineSection />
-      <CareerTimelineSection />
-      <PublicSpeakingSection />
+      <div id="experience"><CareerTimelineSection /></div>
+      <div id="speaking"><PublicSpeakingSection /></div>
       <SpeakingGrowthSection />
       <CRMProjectSection />
       <TGScopeSection />
@@ -75,7 +75,7 @@ bottom: '24px',
       <FirstTeamSection />
       <HackathonSection />
       <TeamValueSection />
-      <ServicesSection />
+      <div id="services"><ServicesSection /></div>
 
       <footer
         style={{
@@ -83,15 +83,13 @@ bottom: '24px',
           zIndex: 1,
           padding: '32px 20px 40px',
           textAlign: 'center',
-          background:
-            'linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.03) 100%)',
-          borderTop: '1px solid rgba(139, 92, 246, 0.1)',
+          borderTop: '1px solid var(--border-soft)',
         }}
       >
         <p
           style={{
             fontSize: '0.9rem',
-            color: '#64748b',
+            color: 'var(--text-muted)',
             fontWeight: 500,
             margin: 0,
           }}
@@ -102,10 +100,10 @@ bottom: '24px',
           style={{
             marginTop: '8px',
             fontSize: '0.8rem',
-            color: '#94a3b8',
+            color: 'var(--neutral-400)',
           }}
         >
-          © Даниил Орлов, 2025
+          © Даниил Орлов, 2026
         </p>
       </footer>
     </div>
@@ -113,4 +111,3 @@ bottom: '24px',
 }
 
 export default App
-
