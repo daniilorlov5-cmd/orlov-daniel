@@ -1,8 +1,8 @@
-/* ─────────────────────────────────────────────────────────────
+/* ──────────────────────────────────────────────────────────────
    Дизайн-код ЧИТКОД, перенесённый на plain CSS.
    Токены и правила — из README дизайн-кода: Geist, бумажный фон,
    фиолетовый ведёт, ink держит контраст, кислотный — один акцент на экран.
-   ───────────────────────────────────────────────────────────── */
+   ──────────────────────────────────────────────────────── */
 
 :root {
   --purple: #7e22ce;
@@ -83,7 +83,7 @@ ul { list-style: none; }
   }
 }
 
-/* ── Сетка ─────────────────────────────────────────────────── */
+/* ── Сетка ────────────────────────────────────── */
 
 .container-x {
   width: 100%;
@@ -98,7 +98,7 @@ ul { list-style: none; }
 .stack { display: flex; flex-direction: column; gap: 24px; }
 @media (min-width: 768px) { .stack { gap: 28px; } }
 
-/* ── Типографика ───────────────────────────────────────────── */
+/* ── Типографика ────────────────────────────── */
 
 .eyebrow {
   font-size: 11px;
@@ -119,7 +119,7 @@ ul { list-style: none; }
 .muted { color: var(--muted); }
 .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
-/* ── Карточки ──────────────────────────────────────────────── */
+/* ── Карточки ────────────────────────────────── */
 
 .card {
   background: #fff;
@@ -164,7 +164,7 @@ ul { list-style: none; }
   .section-head .lead { max-width: 440px; text-align: right; }
 }
 
-/* ── Кнопки ────────────────────────────────────────────────── */
+/* ── Кнопки ──────────────────────────────────── */
 
 .btn {
   position: relative;
@@ -225,7 +225,7 @@ ul { list-style: none; }
 .group:hover .arrow-dot { transform: rotate(-45deg) scale(1.08); }
 .group:hover .arrow-dot svg { transform: translateX(2px); }
 
-/* ── Пилюли / теги ─────────────────────────────────────────── */
+/* ── Пилюли / теги ───────────────────────────── */
 
 .pill {
   display: inline-flex; align-items: center; gap: 6px;
@@ -240,7 +240,7 @@ ul { list-style: none; }
 
 .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--acid); }
 
-/* ── Хедер ─────────────────────────────────────────────────── */
+/* ── Хедер ───────────────────────────────────── */
 
 .header {
   position: sticky;
@@ -302,7 +302,7 @@ ul { list-style: none; }
 .mobile-menu a:hover { background: var(--paper); }
 .mobile-menu .btn { margin-top: 6px; }
 
-/* ── Hero ──────────────────────────────────────────────────── */
+/* ── Hero ────────────────────────────────────────── */
 
 .hero-wrap {
   position: relative;
@@ -414,7 +414,55 @@ ul { list-style: none; }
   .hero-chip.br { right: 0; bottom: 16px; }
 }
 
-/* ── Цифры ─────────────────────────────────────────────────── */
+/* Переворот фото: наведение на десктопе, тап на тач-экранах */
+.flip { perspective: 1400px; cursor: pointer; outline: none; }
+.flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s var(--ease);
+  aspect-ratio: 4 / 5;
+}
+@media (hover: hover) { .flip:hover .flip-inner { transform: rotateY(180deg); } }
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-face.hero-photo-card { aspect-ratio: auto; }
+.flip-back {
+  transform: rotateY(180deg);
+  border-radius: 28px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 40px 100px -30px rgba(20, 17, 24, 0.6);
+  overflow: hidden;
+}
+.flip-back::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(90% 60% at 100% 0%, rgba(139, 77, 255, 0.35), transparent 60%);
+  pointer-events: none;
+}
+.flip-back-content { position: relative; height: 100%; padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.flip-back-content .eyebrow { color: var(--acid); }
+.flip-back-content h3 { font-size: clamp(20px, 2vw, 26px); color: #fff; }
+.flip-back-content p { color: rgba(255, 255, 255, 0.65); font-size: 14px; }
+.flip-back-content .btn { align-self: flex-start; margin-top: 6px; }
+.flip-links { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; font-size: 13px; color: rgba(255, 255, 255, 0.6); }
+.flip-links a:hover { color: var(--acid); }
+
+/* Лайтбокс */
+.zoomable { cursor: zoom-in; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(20, 17, 24, 0.92);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  padding: 24px; cursor: zoom-out;
+  animation: lb-in 0.2s ease;
+}
+@keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
+.lightbox img { max-width: min(100%, 1400px); max-height: calc(100vh - 100px); width: auto; height: auto; object-fit: contain; border-radius: 12px; cursor: default; box-shadow: 0 40px 100px -30px rgba(0,0,0,0.8); }
+.lightbox-caption { color: rgba(255,255,255,0.7); font-size: 14px; text-align: center; max-width: 720px; }
+.lightbox-close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.12); color: #fff; display: inline-flex; align-items: center; justify-content: center; }
+.lightbox-close:hover { background: var(--acid); color: var(--ink); }
+
+/* ── Цифры ────────────────────────────────────── */
 
 .stats { display: grid; gap: 12px; }
 @media (min-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
@@ -426,7 +474,7 @@ ul { list-style: none; }
 .stat-title { margin-top: 12px; font-weight: 500; }
 .stat-sub { margin-top: 6px; font-size: 13px; color: var(--muted); }
 
-/* ── Обо мне ───────────────────────────────────────────────── */
+/* ── Обо мне ─────────────────────────────────── */
 
 .about { display: grid; gap: 32px; }
 @media (min-width: 1024px) { .about { grid-template-columns: 1.1fr 0.9fr; gap: 56px; } }
@@ -449,7 +497,7 @@ ul { list-style: none; }
 .fact b { display: block; font-size: 15px; }
 .fact span { font-size: 13px; color: var(--muted); }
 
-/* ── Подход ────────────────────────────────────────────────── */
+/* ── Подход ──────────────────────────────────── */
 
 .steps { display: grid; gap: 12px; }
 @media (min-width: 768px) { .steps { grid-template-columns: repeat(2, 1fr); } }
@@ -460,7 +508,7 @@ ul { list-style: none; }
 .step h4 { margin-top: 10px; font-size: 17px; }
 .step p { margin-top: 8px; font-size: 14px; line-height: 1.45; color: rgba(255, 255, 255, 0.65); }
 
-/* ── Опыт ──────────────────────────────────────────────────── */
+/* ── Опыт ────────────────────────────────────── */
 
 .timeline { position: relative; display: grid; gap: 8px; }
 
@@ -485,7 +533,7 @@ ul { list-style: none; }
   margin-right: 10px; vertical-align: 2px;
 }
 
-/* ── Проекты ───────────────────────────────────────────────── */
+/* ── Проекты ─────────────────────────────────── */
 
 .projects { display: grid; gap: 20px; }
 @media (min-width: 1024px) { .projects { grid-template-columns: repeat(2, 1fr); } }
@@ -528,6 +576,21 @@ ul { list-style: none; }
 .kpi span { font-size: 12px; color: rgba(255, 255, 255, 0.6); }
 .kpi.acid b { color: var(--acid); }
 
+.project-media.kpi-media { display: flex; align-items: center; padding: 28px; background: transparent; }
+.kpis-lg { width: 100%; margin: 0; gap: 12px; }
+.kpis-lg .kpi { padding: 20px; }
+.kpis-lg .kpi b { font-size: 30px; }
+
+/* Доски проектирования */
+.project.boards-card { display: block; }
+.boards { display: grid; gap: 12px; padding: 0 28px 28px; }
+@media (min-width: 640px) { .boards { grid-template-columns: repeat(2, 1fr); padding: 0 36px 36px; } }
+@media (min-width: 1024px) { .boards { grid-template-columns: repeat(4, 1fr); } }
+.board { border-radius: 16px; overflow: hidden; background: var(--paper); border: 1px solid var(--line); }
+.board img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top left; transition: transform 0.5s var(--ease); }
+.board:hover img { transform: scale(1.03); }
+.board figcaption { padding: 10px 12px; font-size: 12px; color: var(--muted); line-height: 1.35; }
+
 .feature-list { display: grid; gap: 8px; }
 .feature { display: flex; gap: 10px; font-size: 14px; line-height: 1.4; color: var(--muted); }
 .feature b { color: var(--ink); font-weight: 500; }
@@ -546,14 +609,14 @@ ul { list-style: none; }
 .tp-foot { margin-top: 4px; font-size: 12px; color: var(--acid); }
 @media (max-width: 480px) { .tp-row { grid-template-columns: 1fr 90px 32px; } }
 
-/* ── Выступления ───────────────────────────────────────────── */
+/* ── Выступления ───────────────────────────────── */
 
 .talks { display: grid; gap: 16px; }
 @media (min-width: 768px) { .talks { grid-template-columns: repeat(3, 1fr); } }
 
 .talk { border-radius: var(--r-inner); overflow: hidden; background: var(--paper); display: flex; flex-direction: column; }
 .talk-img { aspect-ratio: 4 / 3; overflow: hidden; }
-.talk-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.talk-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s var(--ease); }
 .talk:hover .talk-img img { transform: scale(1.04); }
 .talk-body { padding: 20px; }
 .talk-body h4 { font-size: 17px; }
@@ -562,10 +625,10 @@ ul { list-style: none; }
 .gallery { display: grid; gap: 12px; margin-top: 16px; }
 @media (min-width: 640px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
 .gallery figure { border-radius: 16px; overflow: hidden; background: var(--paper); }
-.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center top; }
 .gallery figcaption { padding: 12px 14px; font-size: 13px; color: var(--muted); }
 
-/* ── Достижения ────────────────────────────────────────────── */
+/* ── Достижения ────────────────────────────────── */
 
 .achievements { display: grid; gap: 16px; }
 @media (min-width: 1024px) { .achievements { grid-template-columns: 1.2fr 1fr; } }
@@ -586,7 +649,7 @@ ul { list-style: none; }
 .ach.acid .ico { background: rgba(59, 58, 30, 0.12); color: var(--on-acid); }
 .ach.acid span { color: rgba(59, 58, 30, 0.7); }
 
-/* ── Услуги ────────────────────────────────────────────────── */
+/* ── Услуги ──────────────────────────────────── */
 
 .tiers { display: grid; gap: 16px; }
 @media (min-width: 640px) { .tiers { grid-template-columns: repeat(2, 1fr); } }
@@ -605,7 +668,7 @@ ul { list-style: none; }
 .tier.flag li .ico { color: var(--acid); }
 .tier .btn { margin-top: 24px; width: 100%; }
 
-/* ── CTA ───────────────────────────────────────────────────── */
+/* ── CTA ───────────────────────────────────────── */
 
 .cta { padding: 48px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 @media (min-width: 768px) { .cta { padding: 80px 56px; } }
@@ -613,13 +676,13 @@ ul { list-style: none; }
 .cta p { color: rgba(255, 255, 255, 0.75); max-width: 520px; font-size: 17px; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
 
-/* ── Футер ─────────────────────────────────────────────────── */
+/* ── Футер ────────────────────────────────────── */
 
 .footer { padding: 40px 0 48px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; font-size: 13px; color: var(--muted); }
 .footer .links { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
 .footer a:hover { color: var(--purple); }
 
-/* ── Утилиты ───────────────────────────────────────────────── */
+/* ── Утилиты ───────────────────────────────────── */
 
 .mt-6 { margin-top: 24px; }
 .mt-8 { margin-top: 32px; }
