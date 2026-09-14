@@ -25,6 +25,16 @@ import design1 from './assets/photo/Рисунок63.png'
 import design2 from './assets/photo/Рисунок64.png'
 import design3 from './assets/photo/Рисунок65.png'
 import design4 from './assets/photo/Рисунок66.png'
+/* Скриншоты продуктов — webp, упакованный в SVG (так они проходят через API как текст) */
+import shotBbeeStore from './assets/shots/bbee-store.svg'
+import shotBlackbee from './assets/shots/blackbeesaas.svg'
+import shotPortal from './assets/shots/portal-dashboard.svg'
+import shotPortalTasks from './assets/shots/portal-tasks.svg'
+import shotOreonsee from './assets/shots/oreonsee-overview.svg'
+import shotOreonseeStats from './assets/shots/oreonsee-stats.svg'
+import shotLeadly from './assets/shots/leadly-dialogs.svg'
+import shotPushka from './assets/shots/pushka-creatives.svg'
+import shotPushkaCampaigns from './assets/shots/pushka-campaigns.svg'
 
 export const IMG = {
   logo, hero, stage,
@@ -32,4 +42,6 @@ export const IMG = {
   hackathon, tgAds, crm1, crm2, crmMobile,
   talk1, talk2, talk3, mic1, mic2, mic3,
   tgscope, vibe, design1, design2, design3, design4,
+  shotBbeeStore, shotBlackbee, shotPortal, shotPortalTasks,
+  shotOreonsee, shotOreonseeStats, shotLeadly, shotPushka, shotPushkaCampaigns,
 }

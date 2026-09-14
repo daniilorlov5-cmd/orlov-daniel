@@ -3,7 +3,7 @@ import { useInView } from '../lib/useInView'
 
 const STATS = [
   { n: '12', title: 'Запущенных продуктов и сервисов', sub: 'от идеи до MVP: «Умный дом», «Виртуальные визитки», TGScope, TruePeople и другие' },
-  { n: '5', plus: true, title: 'Лет в продуктовой разработке', sub: 'с 2020 года: инфопродукты → Structura → JPPROMO → AI-проекты' },
+  { n: '5', plus: true, title: 'Лет в продуктовой разработке', sub: 'с 2020 года: инфопродукты → Structura → JPPROMO → Kokoc → BlackBee' },
   { n: '30', plus: true, title: 'Специалистов в моих командах', sub: 'frontend, backend, data, design, sales, аналитики' },
   { n: '50', plus: true, title: 'Проектирований и продуктовых решений', sub: 'CJM, флоу, архитектуры, сценарии, прототипы' },
 ]

@@ -7,6 +7,7 @@ import Experience from './sections/Experience'
 import Projects from './sections/Projects'
 import Speaking from './sections/Speaking'
 import Achievements from './sections/Achievements'
+import Oreon from './sections/Oreon'
 import Services from './sections/Services'
 import Cta from './sections/Cta'
 import Footer from './sections/Footer'
@@ -25,6 +26,7 @@ export default function App() {
         <Projects />
         <Speaking />
         <Achievements />
+        <Oreon />
         <Services />
         <Cta />
       </main>

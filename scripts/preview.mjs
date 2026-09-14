@@ -33,7 +33,7 @@ const webpPlugin = {
 const res = await esbuild.build({
   entryPoints: [path.join(root, 'src/main.tsx')],
   bundle: true, write: false, minify: true, format: 'iife', target: 'es2020',
-  jsx: 'automatic', nodePaths: [G], plugins: [webpPlugin],
+  jsx: 'automatic', nodePaths: [G], plugins: [webpPlugin], loader: { '.svg': 'dataurl' },
   define: { 'process.env.NODE_ENV': '"production"' },
   outdir: out, logLevel: 'warning',
 })
