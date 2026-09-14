@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font);
   font-size: 3rem;
   font-weight: 700;
   color: var(--primary);
@@ -261,7 +261,7 @@
   height: 200px;
   background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(40px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
   pointer-events: none;
   animation: floatOrb 8s ease-in-out infinite;
 }
@@ -274,7 +274,7 @@
   height: 250px;
   background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
   border-radius: 50%;
-  filter: blur(50px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
   pointer-events: none;
   animation: floatOrb 10s ease-in-out infinite reverse;
 }

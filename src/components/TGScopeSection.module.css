@@ -21,7 +21,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font);
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
   color: #1a1a2e;
@@ -38,7 +38,7 @@
 }
 
 .subtitle {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font);
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: #8b9dc3;
   font-weight: 500;
@@ -107,7 +107,7 @@
   background: rgba(255, 255, 255, 0.08);
   padding: 8px 16px;
   border-radius: 8px;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font);
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
   display: flex;
@@ -153,7 +153,7 @@
   );
   pointer-events: none;
   z-index: -1;
-  filter: blur(40px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 
@@ -164,7 +164,7 @@
   padding: 18px 36px;
   background: linear-gradient(135deg, #2196f3 0%, #1976d2 50%, #1565c0 100%);
   color: white;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font);
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
@@ -212,7 +212,6 @@
     rgba(255, 255, 255, 0.95) 0%,
     rgba(248, 250, 255, 0.9) 100%
   );
-  backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 28px;
   border: 1px solid rgba(33, 150, 243, 0.1);
@@ -234,7 +233,7 @@
   position: absolute;
   top: 16px;
   right: 16px;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font);
   font-size: 2.5rem;
   font-weight: 700;
   background: linear-gradient(135deg, rgba(33, 150, 243, 0.15) 0%, rgba(0, 188, 212, 0.1) 100%);
@@ -245,7 +244,7 @@
 }
 
 .featureTitle {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font);
   font-size: 1.1rem;
   font-weight: 700;
   color: #1a1a2e;
@@ -254,7 +253,7 @@
 }
 
 .featureDescription {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--font);
   font-size: 0.9rem;
   line-height: 1.6;
   color: #5a5a7a;
@@ -299,7 +298,7 @@
     rgba(33, 150, 243, 0.05) 40%,
     transparent 70%
   );
-  filter: blur(60px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gradientOrb2 {
@@ -314,7 +313,7 @@
     rgba(76, 175, 80, 0.08) 40%,
     transparent 70%
   );
-  filter: blur(80px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gradientOrb3 {
@@ -329,7 +328,7 @@
     rgba(249, 168, 37, 0.1) 0%,
     transparent 60%
   );
-  filter: blur(100px);
+  display: none; /* тяжёлый blur-декор отключён: фон теперь глобальный */
 }
 
 .gridPattern {
