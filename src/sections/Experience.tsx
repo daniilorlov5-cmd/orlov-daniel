@@ -5,7 +5,19 @@ type Item = { date: string; title: string; org?: string; desc: string; tags?: st
 
 const ITEMS: Item[] = [
   {
-    date: 'Авг 2025 — сейчас', now: true,
+    date: 'Май 2026 — сейчас', now: true,
+    title: 'Product Manager', org: 'BlackBee',
+    desc: 'Платформа промышленной 3D-печати и print-on-demand для селлеров и блогеров. Подал заявку на резидентство Сколково и получил статус резидента. Контролирую разработку платформы blackbeesaas.ru, с нуля сделал сайт студии bbee.store.',
+    tags: ['резидент Сколково', 'blackbeesaas.ru', 'bbee.store', '3D-печать'],
+  },
+  {
+    date: 'Май — Авг 2026',
+    title: 'Product Lead направления Oreon', org: 'Kokoc Group',
+    desc: 'Развитие продуктовой линейки Oreon внутри группы и внедрение инструментов автоматизации маркетинга в Telegram и мессенджере Max: CRM кампаний, поиск лидов, контент-фабрика, единый портал.',
+    tags: ['Telegram', 'Max', 'автоматизация маркетинга', 'продуктовая линейка'],
+  },
+  {
+    date: 'Авг 2025 — Май 2026',
     title: 'AI-продукты: TruePeople и новые сервисы', org: 'собственные проекты',
     desc: 'TruePeople — платформа, которая определяет бот-аудиторию и поднимает качество закупки трафика в Telegram. Параллельно собираю и проверяю новые AI-сервисы от идеи до демо.',
     tags: ['AI', 'Telegram', 'аналитика'],
@@ -59,7 +71,7 @@ export default function Experience() {
             <h2 className="h-lg" style={{ marginTop: 12, ...revealStyle(inView, 1) }}>Хронология</h2>
           </div>
           <p className="lead" style={revealStyle(inView, 2)}>
-            От первых инфопродуктов в 2020-м до собственных AI-сервисов. Каждая строка — продукт, который дошёл до пользователей.
+            От первых инфопродуктов в 2020-м до BlackBee и продуктовой линейки Oreon. Каждая строка — продукт, который дошёл до пользователей.
           </p>
         </div>
 

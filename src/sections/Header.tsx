@@ -7,6 +7,7 @@ const NAV = [
   { href: '#experience', label: 'Опыт' },
   { href: '#projects', label: 'Проекты' },
   { href: '#speaking', label: 'Выступления' },
+  { href: '#oreon', label: 'Oreon' },
   { href: '#services', label: 'Услуги' },
 ]
 

@@ -50,8 +50,34 @@ export default function Projects() {
         </div>
 
         <div className="projects">
-          {/* TGScope — главный кейс */}
+          {/* BlackBee — текущий проект */}
           <article className="project wide" style={revealStyle(inView, 2)}>
+            <div className="project-body">
+              <span className="eyebrow">Product Manager · BlackBee · 2026</span>
+              <h3>BlackBee — промышленная 3D-печать и print-on-demand</h3>
+              <p>Платформа blackbeesaas.ru для блогеров и селлеров: 3D-модель по идее автора, образец за три дня, печать после оплаты покупателем — без склада и закупки. Студия bbee.store: от одного прототипа до серийных партий, запуск продукта за 48 часов.</p>
+              <div className="feature-list">
+                <div className="feature"><IconCheck className="ico" size={18} /><span><b>Резидент Сколково</b> — подал заявку и довёл до статуса</span></div>
+                <div className="feature"><IconCheck className="ico" size={18} /><span><b>blackbeesaas.ru</b> — контролирую разработку платформы</span></div>
+                <div className="feature"><IconCheck className="ico" size={18} /><span><b>bbee.store</b> — сайт студии с калькулятором и 3D-видом, сделан с нуля</span></div>
+              </div>
+              <div className="project-foot">
+                <a href="https://blackbeesaas.ru" target="_blank" rel="noopener noreferrer" className="btn btn-md btn-ink group">
+                  blackbeesaas.ru <IconArrow size={16} />
+                </a>
+                <a href="https://bbee.store" target="_blank" rel="noopener noreferrer" className="btn btn-md btn-soft group" style={{ boxShadow: 'inset 0 0 0 1px var(--line)' }}>
+                  bbee.store <IconArrow size={16} />
+                </a>
+              </div>
+            </div>
+            <div className="project-media shots-2">
+              <Zoomable src={IMG.shotBlackbee} alt="blackbeesaas.ru — главная страница платформы" loading="lazy" />
+              <Zoomable src={IMG.shotBbeeStore} alt="bbee.store — сайт студии 3D-печати" loading="lazy" />
+            </div>
+          </article>
+
+          {/* TGScope — главный кейс */}
+          <article className="project wide" style={revealStyle(inView, 3)}>
             <div className="project-body">
               <span className="eyebrow">Аналитика Telegram · JPPROMO</span>
               <h3>TGScope — сервис аналитики Telegram-каналов</h3>

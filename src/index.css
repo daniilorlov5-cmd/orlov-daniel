@@ -548,14 +548,14 @@ ul { list-style: none; }
 .project.wide { grid-column: 1 / -1; }
 @media (min-width: 1024px) { .project.wide { display: grid; grid-template-columns: 1fr 1.2fr; } }
 
-.project-body { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+.project-body { padding: 28px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 @media (min-width: 640px) { .project-body { padding: 36px; } }
 .project-body h3 { font-size: clamp(22px, 2.2vw, 28px); }
 .project-body p { color: var(--muted); font-size: 15px; line-height: 1.5; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .project-foot { margin-top: auto; padding-top: 12px; display: flex; align-items: center; gap: 12px; }
 
-.project-media { position: relative; background: var(--paper); min-height: 240px; overflow: hidden; }
+.project-media { position: relative; background: var(--paper); min-height: 240px; overflow: hidden; min-width: 0; }
 .project-media img { width: 100%; height: 100%; object-fit: cover; }
 .project-media.frame { padding: 28px 0 0 28px; }
 .project-media.frame img { border-radius: 16px 0 0 0; box-shadow: 0 20px 50px -20px rgba(20, 17, 24, 0.35); object-position: top left; height: 100%; }
@@ -688,3 +688,36 @@ ul { list-style: none; }
 .mt-8 { margin-top: 32px; }
 .icon { width: 20px; height: 20px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ── Скриншоты в карточке проекта (два подряд) ─────────────── */
+
+.project-body { min-width: 0; }
+.project-media { min-width: 0; }
+.project-media.shots-2 { display: grid; gap: 12px; padding: 24px; align-content: start; }
+.project-media.shots-2 img { width: 100%; max-width: 100%; height: auto; max-height: 260px; object-fit: cover; object-position: top; border-radius: 12px; box-shadow: 0 12px 30px -14px rgba(20, 17, 24, 0.35); }
+
+/* ── Oreon ─────────────────────────────────────────────────── */
+
+.oreon-intro { display: grid; gap: 20px; margin-bottom: 28px; align-items: start; }
+@media (min-width: 900px) { .oreon-intro { grid-template-columns: 1fr auto; gap: 32px; } }
+.oreon-intro-text p { font-size: 16px; line-height: 1.55; max-width: 760px; }
+.oreon-intro-text p + p { margin-top: 10px; font-size: 14px; }
+
+.oreon-grid { display: grid; gap: 16px; }
+@media (min-width: 1024px) { .oreon-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.oreon-product { min-width: 0; display: flex; flex-direction: column; border-radius: var(--r-inner); background: var(--paper); overflow: hidden; border: 1px solid var(--line); }
+.oreon-product.dark { background: var(--ink); color: #fff; border-color: transparent; }
+.oreon-product.dark .eyebrow { color: var(--acid); }
+.oreon-product-body { padding: 24px 24px 18px; display: flex; flex-direction: column; gap: 10px; }
+.oreon-product-body h3 { font-size: 20px; }
+.oreon-product-body p { font-size: 14px; line-height: 1.5; color: var(--muted); }
+.oreon-product.dark .oreon-product-body p { color: rgba(255, 255, 255, 0.65); }
+
+.oreon-shots { display: grid; gap: 10px; padding: 0 16px 16px; margin-top: auto; }
+.oreon-shots.two { grid-template-columns: 1fr 1fr; }
+.oreon-shot { min-width: 0; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid var(--line); aspect-ratio: 16 / 10; }
+.oreon-product.dark .oreon-shot { border-color: rgba(255, 255, 255, 0.1); }
+.oreon-shot img { width: 100%; max-width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform 0.5s var(--ease); }
+.oreon-shot:hover img { transform: scale(1.03); }
+@media (max-width: 480px) { .oreon-shots.two { grid-template-columns: 1fr; } }
