@@ -1,6 +1,7 @@
 import { IMG } from '../assets'
 import { TGSCOPE_LINK } from '../lib/constants'
 import { IconArrow, IconCheck } from './Icons'
+import { Zoomable } from './Lightbox'
 import { revealStyle } from '../lib/reveal'
 import { useInView } from '../lib/useInView'
 
@@ -26,6 +27,13 @@ const TGADS_KPI = [
   { v: '1,8 млн ₽', l: 'бюджет кампании', acid: true },
 ]
 
+const BOARDS = [
+  { img: IMG.design1, c: 'Монетизация: сегменты аудитории и CPM по нишам' },
+  { img: IMG.design2, c: 'Карта объектов и связей продукта' },
+  { img: IMG.design3, c: 'Пользовательские сценарии и флоу' },
+  { img: IMG.design4, c: 'Архитектура решения и логика экранов' },
+]
+
 export default function Projects() {
   const { ref, inView } = useInView<HTMLDivElement>()
   return (
@@ -37,7 +45,7 @@ export default function Projects() {
             <h2 className="h-lg" style={{ marginTop: 12, ...revealStyle(inView, 1) }}>Что я запускал</h2>
           </div>
           <p className="lead" style={revealStyle(inView, 2)}>
-            Не концепты, а сервисы с пользователями, бюджетами и цифрами.
+            Не концепты, а сервисы с пользователями, бюджетами и цифрами. Любую картинку можно открыть.
           </p>
         </div>
 
@@ -63,44 +71,12 @@ export default function Projects() {
               </div>
             </div>
             <div className="project-media frame">
-              <img src={IMG.tgscope} alt="Главная страница TGScope" loading="lazy" />
-            </div>
-          </article>
-
-          {/* JPVision CRM */}
-          <article className="project" style={revealStyle(inView, 3)}>
-            <div className="project-media contain">
-              <img src={IMG.crmMobile} alt="Мобильная версия CRM JPVision" loading="lazy" />
-            </div>
-            <div className="project-body">
-              <span className="eyebrow">CRM · JPPROMO</span>
-              <h3>JPVision — платформа визуализации рекламных кампаний</h3>
-              <p>Собрал команду и разработал продукт с нуля: сбор статистики, графики, анимации интерфейса, прототип мобильной версии. Презентовал Яндексу и МТС.</p>
-              <div className="project-tags">
-                {['с нуля', 'команда 7', 'графики', 'мобильная версия'].map(t => <span key={t} className="pill">{t}</span>)}
-              </div>
-            </div>
-          </article>
-
-          {/* Telegram Ads Пятёрочка */}
-          <article className="project purple on-dark" style={revealStyle(inView, 4)}>
-            <div className="project-body">
-              <span className="eyebrow">Telegram Ads · кампания</span>
-              <h3>Рекламный бюджет TG Ads для «Пятёрочки»</h3>
-              <p>Вместе с JPPROMO охватили аудиторию по всей России, удержали стабильную вовлечённость и качество регистраций в бота.</p>
-              <div className="kpis">
-                {TGADS_KPI.map(k => (
-                  <div key={k.l} className={`kpi ${k.acid ? 'acid' : ''}`}>
-                    <b>{k.v}</b>
-                    <span>{k.l}</span>
-                  </div>
-                ))}
-              </div>
+              <Zoomable src={IMG.tgscope} alt="TGScope — главная страница" loading="lazy" />
             </div>
           </article>
 
           {/* TruePeople */}
-          <article className="project wide dark" style={revealStyle(inView, 5)}>
+          <article className="project wide dark" style={revealStyle(inView, 3)}>
             <div className="project-body">
               <span className="eyebrow" style={{ color: 'var(--acid)' }}>Anti-fraud · OREON</span>
               <h3>TruePeople — отбор живых каналов для закупки</h3>
@@ -127,33 +103,42 @@ export default function Projects() {
             </div>
           </article>
 
-          {/* VibeCoding / HireSpark */}
-          <article className="project" style={revealStyle(inView, 6)}>
-            <div className="project-media frame">
-              <img src={IMG.vibe} alt="Демо сервиса, собранного за неделю" loading="lazy" />
-            </div>
+          {/* Telegram Ads Пятёрочка */}
+          <article className="project wide purple on-dark" style={revealStyle(inView, 4)}>
             <div className="project-body">
-              <span className="eyebrow">AI · собственные продукты</span>
-              <h3>HireSpark и MVP за неделю</h3>
-              <p>Выпускник курса VibeCoding: сам собираю и проверяю гипотезы от идеи до демо с помощью MCP-инструментов. HireSpark — сервис анализа резюме на Gamma AI 2.0.</p>
-              <div className="project-tags">
-                {['Gamma AI 2.0', 'MCP', 'MVP за неделю'].map(t => <span key={t} className="pill">{t}</span>)}
+              <span className="eyebrow">Telegram Ads · кампания</span>
+              <h3>Рекламный бюджет TG Ads для «Пятёрочки»</h3>
+              <p>Вместе с JPPROMO охватили аудиторию по всей России, удержали стабильную вовлечённость и качество регистраций в бота.</p>
+            </div>
+            <div className="project-media kpi-media">
+              <div className="kpis kpis-lg">
+                {TGADS_KPI.map(k => (
+                  <div key={k.l} className={`kpi ${k.acid ? 'acid' : ''}`}>
+                    <b>{k.v}</b>
+                    <span>{k.l}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </article>
 
-          {/* Проектирование */}
-          <article className="project" style={revealStyle(inView, 7)}>
-            <div className="project-media frame">
-              <img src={IMG.design1} alt="Проектирование: карта объектов и сценарии" loading="lazy" />
-            </div>
+          {/* Проектирование — карта досок */}
+          <article className="project wide boards-card" style={revealStyle(inView, 5)}>
             <div className="project-body">
               <span className="eyebrow">Проектирование</span>
               <h3>50+ структур, флоу и прототипов</h3>
-              <p>Карты объектов, CJM, сценарии, архитектуры и ТЗ — под каждый продукт своя структура. Большая часть под NDA, но подход одинаков: сначала логика, потом интерфейс.</p>
+              <p>Карты объектов, CJM, сценарии, архитектуры и ТЗ — под каждый продукт своя структура. Большая часть под NDA, но подход одинаков: сначала логика, потом интерфейс. Доски открываются по клику.</p>
               <div className="project-tags">
-                {['CJM', 'wireframes', 'архитектура', 'ТЗ'].map(t => <span key={t} className="pill">{t}</span>)}
+                {['CJM', 'wireframes', 'архитектура', 'ТЗ', 'юнит-экономика'].map(t => <span key={t} className="pill">{t}</span>)}
               </div>
+            </div>
+            <div className="boards">
+              {BOARDS.map(b => (
+                <figure key={b.c} className="board">
+                  <Zoomable src={b.img} alt={b.c} loading="lazy" />
+                  <figcaption>{b.c}</figcaption>
+                </figure>
+              ))}
             </div>
           </article>
         </div>

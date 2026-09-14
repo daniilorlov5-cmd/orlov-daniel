@@ -1,4 +1,5 @@
 import { IMG } from '../assets'
+import { Zoomable } from './Lightbox'
 import { revealStyle } from '../lib/reveal'
 import { useInView } from '../lib/useInView'
 
@@ -32,7 +33,7 @@ export default function Speaking() {
         <div className="talks">
           {TALKS.map((t, i) => (
             <div key={t.t} className="talk" style={revealStyle(inView, i + 2, { step: 90 })}>
-              <div className="talk-img"><img src={t.img} alt={t.t} loading="lazy" /></div>
+              <div className="talk-img"><Zoomable src={t.img} alt={t.t} loading="lazy" /></div>
               <div className="talk-body">
                 <h4>{t.t}</h4>
                 <p>{t.d}</p>
@@ -44,7 +45,7 @@ export default function Speaking() {
         <div className="gallery">
           {GALLERY.map((g, i) => (
             <figure key={g.c} style={revealStyle(inView, i + 5, { step: 80 })}>
-              <img src={g.img} alt="" loading="lazy" />
+              <Zoomable src={g.img} alt={g.c} loading="lazy" />
               <figcaption>{g.c}</figcaption>
             </figure>
           ))}
