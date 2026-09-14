@@ -10,6 +10,7 @@ import Achievements from './sections/Achievements'
 import Services from './sections/Services'
 import Cta from './sections/Cta'
 import Footer from './sections/Footer'
+import Lightbox from './sections/Lightbox'
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Cta />
       </main>
       <Footer />
+      <Lightbox />
     </>
   )
 }

@@ -6,8 +6,8 @@ type Item = { date: string; title: string; org?: string; desc: string; tags?: st
 const ITEMS: Item[] = [
   {
     date: 'Авг 2025 — сейчас', now: true,
-    title: 'AI-продукты: HireSpark и TruePeople', org: 'собственные проекты',
-    desc: 'HireSpark — сервис анализа резюме на базе Gamma AI 2.0. TruePeople — платформа, которая определяет бот-аудиторию и поднимает качество закупки трафика в Telegram.',
+    title: 'AI-продукты: TruePeople и новые сервисы', org: 'собственные проекты',
+    desc: 'TruePeople — платформа, которая определяет бот-аудиторию и поднимает качество закупки трафика в Telegram. Параллельно собираю и проверяю новые AI-сервисы от идеи до демо.',
     tags: ['AI', 'Telegram', 'аналитика'],
   },
   {

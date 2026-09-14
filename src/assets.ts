@@ -22,12 +22,14 @@ import mic3 from './assets/photo/Рисунок57.jpg'
 import tgscope from './assets/presentation/2025-12-15_14-28-12.png'
 import vibe from './assets/demo46.png'
 import design1 from './assets/photo/Рисунок63.png'
-import design2 from './assets/photo/Рисунок65.png'
+import design2 from './assets/photo/Рисунок64.png'
+import design3 from './assets/photo/Рисунок65.png'
+import design4 from './assets/photo/Рисунок66.png'
 
 export const IMG = {
   logo, hero, stage,
   team1, team2, team3, team4, colleague1, colleague2,
   hackathon, tgAds, crm1, crm2, crmMobile,
   talk1, talk2, talk3, mic1, mic2, mic3,
-  tgscope, vibe, design1, design2,
+  tgscope, vibe, design1, design2, design3, design4,
 }

@@ -1,4 +1,5 @@
 import { IMG } from '../assets'
+import { Zoomable, openImage } from './Lightbox'
 import { IconGrant, IconRocket, IconTrophy } from './Icons'
 import { revealStyle } from '../lib/reveal'
 import { useInView } from '../lib/useInView'
@@ -16,7 +17,7 @@ export default function Achievements() {
         </div>
 
         <div className="achievements">
-          <div className="ach-main" style={revealStyle(inView, 2)}>
+          <div className="ach-main zoomable" style={revealStyle(inView, 2)} onClick={() => openImage(IMG.hackathon, 'Команда на хакатоне «Код Мира», Грозный')}>
             <img src={IMG.hackathon} alt="Команда на хакатоне «Код Мира»" loading="lazy" />
             <div className="ach-overlay">
               <span className="eyebrow" style={{ color: 'var(--acid)' }}>Хакатон «Код Мира» · Грозный · 2023</span>
@@ -60,7 +61,7 @@ export default function Achievements() {
             { img: IMG.colleague2, c: 'TGScope — с коллегой на стенде' },
           ].map((g, i) => (
             <figure key={g.c} style={revealStyle(inView, i + 6, { step: 80 })}>
-              <img src={g.img} alt="" loading="lazy" />
+              <Zoomable src={g.img} alt={g.c} loading="lazy" />
               <figcaption>{g.c}</figcaption>
             </figure>
           ))}

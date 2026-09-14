@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import { IMG } from '../assets'
-import { EMAIL, TG_LINK } from '../lib/constants'
+import { EMAIL, TG_LINK, VK_LINK } from '../lib/constants'
 import { IconMail, IconTelegram } from './Icons'
 import { revealStyle } from '../lib/reveal'
 import { useInView } from '../lib/useInView'
 
 export default function Hero() {
   const { ref, inView } = useInView<HTMLDivElement>('0px')
+  const [flipped, setFlipped] = useState(false)
 
   return (
     <div className="hero-wrap" id="top">
@@ -38,9 +40,35 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* Фото переворачивается при наведении; на тач-экранах — по тапу */}
           <div className="hero-photo" style={revealStyle(inView, 1, { y: 24 })}>
-            <div className="hero-photo-card">
-              <img src={IMG.hero} alt="Даниил Орлов" width={840} height={1050} />
+            <div
+              className={`flip ${flipped ? 'is-flipped' : ''}`}
+              onClick={() => setFlipped(v => !v)}
+              role="button"
+              tabIndex={0}
+              aria-label="Перевернуть карточку"
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFlipped(v => !v) } }}
+            >
+              <div className="flip-inner">
+                <div className="flip-face hero-photo-card">
+                  <img src={IMG.hero} alt="Даниил Орлов" width={840} height={1050} />
+                </div>
+                <div className="flip-face flip-back">
+                  <div className="flip-back-content">
+                    <span className="eyebrow">Готов к сотрудничеству</span>
+                    <h3>Product Manager с опытом создания успешных digital-продуктов</h3>
+                    <p>Напишите — отвечу в тот же день и предложу, с чего начать.</p>
+                    <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-md btn-acid" onClick={e => e.stopPropagation()}>
+                      <IconTelegram size={16} /> Написать в Telegram
+                    </a>
+                    <div className="flip-links">
+                      <a href={`mailto:${EMAIL}`} onClick={e => e.stopPropagation()}>{EMAIL}</a>
+                      <a href={VK_LINK} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>VK · daniil824525</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="hero-chip tl">
               <b>5+</b>
