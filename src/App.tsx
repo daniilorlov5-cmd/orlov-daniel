@@ -9,6 +9,7 @@ import Speaking from './sections/Speaking'
 import Achievements from './sections/Achievements'
 import Oreon from './sections/Oreon'
 import Services from './sections/Services'
+import MiniApps from './sections/MiniApps'
 import Cta from './sections/Cta'
 import Footer from './sections/Footer'
 import Lightbox from './sections/Lightbox'
@@ -28,6 +29,7 @@ export default function App() {
         <Achievements />
         <Oreon />
         <Services />
+        <MiniApps />
         <Cta />
       </main>
       <Footer />

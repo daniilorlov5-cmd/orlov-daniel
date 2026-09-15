@@ -2,19 +2,24 @@ import { useEffect, useState } from 'react'
 import { IMG } from '../assets'
 import { TG_LINK } from '../lib/constants'
 
-const NAV = [
+type NavItem = { href: string; label: string; page?: boolean }
+const NAV: NavItem[] = [
   { href: '#about', label: 'Обо мне' },
   { href: '#experience', label: 'Опыт' },
   { href: '#projects', label: 'Проекты' },
   { href: '#speaking', label: 'Выступления' },
   { href: '#oreon', label: 'Oreon' },
   { href: '#services', label: 'Услуги' },
+  { href: '#miniapps', label: 'Mini Apps' },
+  { href: '/price/', label: 'Прайс', page: true },
 ]
 
 /* Хедер: на hero прозрачный с белым текстом, при скролле — бумажная плашка. */
-export default function Header() {
+export default function Header({ home = true }: { home?: boolean }) {
   const [solid, setSolid] = useState(false)
   const [open, setOpen] = useState(false)
+  /* На странице прайса якоря ведут на главную */
+  const nav = NAV.map(n => ({ ...n, href: n.page || home ? n.href : `/${n.href}` }))
 
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 40)
@@ -24,15 +29,15 @@ export default function Header() {
   }, [])
 
   return (
-    <header className={`header ${solid || open ? 'is-solid' : ''}`}>
+    <header className={`header ${solid || open || !home ? 'is-solid' : ''}`}>
       <div className="container-x header-bar">
-        <a href="#top" className="brand" onClick={() => setOpen(false)}>
+        <a href={home ? '#top' : '/'} className="brand" onClick={() => setOpen(false)}>
           <img src={IMG.logo} alt="" className="brand-logo" />
           <span className="brand-name">Даниил Орлов</span>
         </a>
 
         <nav className="nav" aria-label="Разделы">
-          {NAV.map(n => <a key={n.href} href={n.href}>{n.label}</a>)}
+          {nav.map(n => <a key={n.href} href={n.href} className={n.page ? 'nav-page' : ''}>{n.label}</a>)}
         </nav>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -51,7 +56,7 @@ export default function Header() {
 
       {open && (
         <div className="mobile-menu">
-          {NAV.map(n => <a key={n.href} href={n.href} onClick={() => setOpen(false)}>{n.label}</a>)}
+          {nav.map(n => <a key={n.href} href={n.href} onClick={() => setOpen(false)}>{n.label}</a>)}
           <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-md btn-acid">Написать в Telegram</a>
         </div>
       )}

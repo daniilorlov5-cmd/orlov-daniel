@@ -32,6 +32,18 @@ import shotPortal from './assets/shots/portal-dashboard.svg'
 import shotOreonsee from './assets/shots/oreonsee-overview.svg'
 import shotLeadly from './assets/shots/leadly-dialogs.svg'
 import shotPushka from './assets/shots/pushka-creatives.svg'
+/* Страница прайса и портфолио мини-аппов */
+import sketch from './assets/shots/sketch.svg'
+import appFootballGame from './assets/shots/app-football-game.svg'
+import appFootballRating from './assets/shots/app-football-rating.svg'
+import appBasketballGame from './assets/shots/app-basketball-game.svg'
+import appBasketballRating from './assets/shots/app-basketball-rating.svg'
+import appBoxingGame from './assets/shots/app-boxing-game.svg'
+import appBoxingRating from './assets/shots/app-boxing-rating.svg'
+import appGymGame from './assets/shots/app-gym-game.svg'
+import appGymRating from './assets/shots/app-gym-rating.svg'
+import appRacingGame from './assets/shots/app-racing-game.svg'
+import appRacingRating from './assets/shots/app-racing-rating.svg'
 
 export const IMG = {
   logo, hero, stage,
@@ -40,4 +52,7 @@ export const IMG = {
   talk1, talk2, talk3, mic1, mic2, mic3,
   tgscope, vibe, design1, design2, design3, design4,
   shotBbeeStore, shotBlackbee, shotPortal, shotOreonsee, shotLeadly, shotPushka,
+  sketch,
+  appFootballGame, appFootballRating, appBasketballGame, appBasketballRating,
+  appBoxingGame, appBoxingRating, appGymGame, appGymRating, appRacingGame, appRacingRating,
 }
