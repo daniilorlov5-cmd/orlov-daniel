@@ -30,11 +30,10 @@
 .price-hero-notes svg { color: var(--purple); }
 
 .price-sketch { position: relative; justify-self: center; width: min(100%, 440px); }
-.price-sketch img {
-  width: 100%; height: auto; display: block;
+.price-sketch video {
+  width: 100%; height: auto; display: block; aspect-ratio: 450 / 800; object-fit: cover;
   border-radius: 28px; border: 1px solid rgba(126, 34, 206, 0.18);
-  background: #fff; box-shadow: 0 40px 90px -40px rgba(126, 34, 206, 0.45);
-  mix-blend-mode: multiply;
+  background: #f3eef9; box-shadow: 0 40px 90px -40px rgba(126, 34, 206, 0.45);
 }
 .price-sketch-tag {
   position: absolute; left: -12px; bottom: 28px;
@@ -118,3 +117,19 @@
 .brand { gap: 12px; }
 .brand-logo { width: 48px; height: 48px; flex: none; }
 .brand-name { font-size: 17px; }
+
+/* ─── Mini Apps внутри «Проектов»: веер из пяти экранов ─── */
+.project-media.apps-strip { display: flex; align-items: flex-end; justify-content: center; padding: 28px 12px 0; overflow: hidden; background: radial-gradient(ellipse at 50% 100%, rgba(126, 34, 206, 0.22), transparent 70%), var(--paper); }
+.project-media.apps-strip img {
+  width: 34%; height: auto; max-width: 220px; aspect-ratio: 390 / 700; object-fit: cover; object-position: top;
+  border-radius: 16px 16px 0 0; border: 3px solid var(--ink); border-bottom: 0;
+  box-shadow: -12px -6px 30px -14px rgba(20, 17, 24, 0.55);
+  margin-left: -9%; transform-origin: bottom center; transition: transform .25s;
+}
+.project-media.apps-strip img:first-child { margin-left: 0; }
+.project-media.apps-strip img:nth-child(1) { transform: translateY(26px) rotate(-4deg); }
+.project-media.apps-strip img:nth-child(2) { transform: translateY(12px) rotate(-2deg); }
+.project-media.apps-strip img:nth-child(4) { transform: translateY(12px) rotate(2deg); }
+.project-media.apps-strip img:nth-child(5) { transform: translateY(26px) rotate(4deg); }
+.project-media.apps-strip img:hover { transform: translateY(-8px) rotate(0); z-index: 2; }
+.project-media.apps-strip img:nth-child(3) { z-index: 1; }

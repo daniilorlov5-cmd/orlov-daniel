@@ -1,4 +1,5 @@
 import { IMG } from '../assets'
+import { MINI_APPS } from '../lib/miniapps'
 import { TGSCOPE_LINK } from '../lib/constants'
 import { IconArrow, IconCheck } from './Icons'
 import { Zoomable } from './Lightbox'
@@ -73,6 +74,33 @@ export default function Projects() {
             <div className="project-media shots-2">
               <Zoomable src={IMG.shotBlackbee} alt="blackbeesaas.ru — главная страница платформы" loading="lazy" />
               <Zoomable src={IMG.shotBbeeStore} alt="bbee.store — сайт студии 3D-печати" loading="lazy" />
+            </div>
+          </article>
+
+          {/* Telegram Mini Apps — пять игр на одном движке */}
+          <article className="project wide" id="miniapps" style={revealStyle(inView, 3)}>
+            <div className="project-body">
+              <span className="eyebrow">Telegram Mini Apps · 5 игр</span>
+              <h3>Пять игр на одном движке</h3>
+              <p>Пять самостоятельных ботов с мини-приложениями: своя механика, своя тема, своя база игроков. Ядро написано один раз — каждая следующая игра собирается за дни, а не за недели.</p>
+              <div className="feature-list">
+                <div className="feature"><IconCheck className="ico" size={18} /><span><b>Удержание</b> — энергия, уровни, множители, ежедневный бонус, задания, лидеры</span></div>
+                <div className="feature"><IconCheck className="ico" size={18} /><span><b>Защита</b> — проверка подписи Telegram, лимиты на сервере, нельзя накрутить очки</span></div>
+                <div className="feature"><IconCheck className="ico" size={18} /><span><b>Админка</b> — статистика, выгрузка игроков в Excel, сегментированные рассылки</span></div>
+              </div>
+              <div className="project-tags">
+                {MINI_APPS.map(a => <span key={a.name} className="pill">{a.name} · {a.mechanic.toLowerCase()}</span>)}
+              </div>
+              <div className="project-foot">
+                <a href="/price/" className="btn btn-md btn-ink group">
+                  Заказать мини-апп <IconArrow size={16} />
+                </a>
+              </div>
+            </div>
+            <div className="project-media apps-strip">
+              {MINI_APPS.map(a => (
+                <Zoomable key={a.name} src={a.game} alt={`${a.name} — игровой экран`} loading="lazy" />
+              ))}
             </div>
           </article>
 
