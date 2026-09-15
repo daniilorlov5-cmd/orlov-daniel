@@ -9,3 +9,6 @@ dist
 # build cache
 tsconfig.tsbuildinfo
 .preview
+
+# Собирается из static-src/ скриптом scripts/assemble-static.mjs
+static/

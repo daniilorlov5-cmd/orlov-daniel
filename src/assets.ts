@@ -33,7 +33,7 @@ import shotOreonsee from './assets/shots/oreonsee-overview.svg'
 import shotLeadly from './assets/shots/leadly-dialogs.svg'
 import shotPushka from './assets/shots/pushka-creatives.svg'
 /* Страница прайса и портфолио мини-аппов */
-import sketch from './assets/shots/sketch.svg'
+import videoPoster from './assets/shots/video-poster.svg'
 import appFootballGame from './assets/shots/app-football-game.svg'
 import appFootballRating from './assets/shots/app-football-rating.svg'
 import appBasketballGame from './assets/shots/app-basketball-game.svg'
@@ -52,7 +52,7 @@ export const IMG = {
   talk1, talk2, talk3, mic1, mic2, mic3,
   tgscope, vibe, design1, design2, design3, design4,
   shotBbeeStore, shotBlackbee, shotPortal, shotOreonsee, shotLeadly, shotPushka,
-  sketch,
+  videoPoster,
   appFootballGame, appFootballRating, appBasketballGame, appBasketballRating,
   appBoxingGame, appBoxingRating, appGymGame, appGymRating, appRacingGame, appRacingRating,
 }
