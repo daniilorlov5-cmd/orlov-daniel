@@ -12,6 +12,7 @@ const esbuild = require(`${G}/tsx/node_modules/esbuild`)
 const sharp = require(`${G}/sharp`)
 
 const mode = process.argv[2] || 'local'
+const entry = process.argv[3] || 'src/main.tsx'
 const root = path.resolve(import.meta.dirname, '..')
 const out = path.join(root, '.preview')
 const FONTS = '/tmp/claude-0/-home-claude/2ceb1606-93f7-55b6-a054-4ec8aff0a322/scratchpad/chitcod/fonts'
@@ -31,7 +32,7 @@ const webpPlugin = {
 }
 
 const res = await esbuild.build({
-  entryPoints: [path.join(root, 'src/main.tsx')],
+  entryPoints: [path.join(root, entry)],
   bundle: true, write: false, minify: true, format: 'iife', target: 'es2020',
   jsx: 'automatic', nodePaths: [G], plugins: [webpPlugin], loader: { '.svg': 'dataurl' },
   define: { 'process.env.NODE_ENV': '"production"' },
@@ -58,6 +59,6 @@ const html = mode === 'local'
   ? `<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Превью</title></head><body>${body}</body></html>`
   : `<title>Даниил Орлов — превью редизайна</title>\n${body}`
 
-const file = path.join(out, mode === 'local' ? 'preview-local.html' : 'preview-artifact.html')
+const file = path.join(out, (mode === 'local' ? 'preview-local' : 'preview-artifact') + (entry.includes('price') ? '-price' : '') + '.html')
 fs.writeFileSync(file, html)
 console.log(mode, '→', file, (html.length / 1024 / 1024).toFixed(2), 'MB; js', (js.length / 1024).toFixed(0), 'kB; css', (css.length / 1024).toFixed(0), 'kB')
