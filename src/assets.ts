@@ -1,5 +1,5 @@
 /* Единый реестр картинок. Превью-сборка подменяет этот файл на data-URI. */
-import logo from './assets/photo/Рисунок36.png'
+import logo from './assets/logo.svg'
 import hero from './assets/photo/Рисунок37.jpg'
 import stage from './assets/photo/Рисунок69.jpg'
 import team1 from './assets/photo/Рисунок42.jpg'
