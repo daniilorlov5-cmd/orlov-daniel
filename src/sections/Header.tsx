@@ -10,7 +10,6 @@ const NAV: NavItem[] = [
   { href: '#speaking', label: 'Выступления' },
   { href: '#oreon', label: 'Oreon' },
   { href: '#services', label: 'Услуги' },
-  { href: '#miniapps', label: 'Mini Apps' },
   { href: '/price/', label: 'Прайс', page: true },
 ]
 
