@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { IMG } from '../assets'
 import { EMAIL, TG_LINK, VK_LINK } from '../lib/constants'
-import { IconMail, IconTelegram } from './Icons'
+import { IconArrow, IconMail, IconTelegram } from './Icons'
 import { revealStyle } from '../lib/reveal'
 import { useInView } from '../lib/useInView'
 
@@ -27,8 +27,15 @@ export default function Hero() {
             </p>
 
             <div className="hero-actions" style={revealStyle(inView, 2)}>
-              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-acid">
-                <IconTelegram size={18} /> Написать в Telegram
+              <a href="/price/" className="btn btn-lg btn-acid btn-glow">
+                Прайс <IconArrow size={18} />
+              </a>
+              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="hero-contact">
+                <span className="ico"><IconTelegram size={15} /></span>
+                <span>
+                  <b>@orlovdaniel</b>
+                  <span>написать в Telegram</span>
+                </span>
               </a>
               <a href={`mailto:${EMAIL}`} className="hero-contact">
                 <span className="ico"><IconMail size={15} /></span>
