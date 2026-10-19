@@ -78,8 +78,8 @@ export default function Oreon() {
               На снимках — демонстрационные данные: показаны возможности систем, а не отчёты по кампаниям клиентов.
             </p>
           </div>
-          <a href="https://oreons.ru" target="_blank" rel="noopener noreferrer" className="btn btn-md btn-purple group">
-            oreons.ru <IconArrow size={16} />
+          <a href="https://oreon-agency.ru" target="_blank" rel="noopener noreferrer" className="btn btn-md btn-purple group">
+            oreon-agency.ru <IconArrow size={16} />
           </a>
         </div>
 
